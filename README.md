@@ -16,12 +16,12 @@ To be placed in ~/
 .Xresources
  
 Optional:
-Configuration file for ranger (File manager)
-rc.conf (~/.config/ranger)
-Configuration file for dunst (Notification app)
-dunstrc (~/.config)
+Configuration file for ranger
+rc.conf ~/.config/ranger
+Configuration file for dunst
+dunstrc ~/.config
  
-Packages used in configuration: nm-applet pa-applet nitrogen compton xautolock i3gaps i3status i3lock powerline lxappearance rofi morc_menu demnu rxvt-unicode
+Packages used in configuration: nm-applet pa-applet nitrogen compton xautolock i3gaps i3status i3lock powerline lxappearance rofi morc_menu dunst demnu rxvt-unicode
  
 Themes and Icons:
 Arc-Theme https://github.com/horst3180/arc-theme
