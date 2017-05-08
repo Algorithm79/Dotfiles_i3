@@ -1,8 +1,8 @@
-#Configuration files for i3wm with Arc-Themed i3 & terminal 2017-05-08
-#To be placed in ~/.config:
-#conky
-#i3
-#i3status
+Configuration files for i3wm with Arc-Themed i3 & terminal 2017-05-08
+To be placed in ~/.config:
+conky
+i3
+i3status
  
 #To be placed in ~/.local/share or ~/.fonts
 #fonts
