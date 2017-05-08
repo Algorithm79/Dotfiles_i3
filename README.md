@@ -17,9 +17,9 @@
  
 #Optional:
 #Configuration file for ranger (File manager)
-#rc.conf (~/.config/ranger
+#rc.conf (~/.config/ranger)
 #Configuration file for dunst (Notification app)
-#dunstrc (~/.config
+#dunstrc (~/.config)
  
 #Packages used in configuration: nm-applet pa-applet nitrogen compton xautolock i3gaps i3status i3lock powerline lxappearance #rofi morc_menu demnu rxvt-unicode
  
