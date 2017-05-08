@@ -1,7 +1,31 @@
-# Configuration files for i3WM
-# conky and i3 folders to be placed in ~/.config
-# i3lock & i3exit to be placed in /usr/bin
-# .fonts to be placed in ~/
-# .Xresources holds theme for Rofi(D-menu replacement) to be placed in ~/
-#Packages used in this configuration: nm-applet pa-applet nitrogen compton conky xautolock i3gaps lxappearance
-#paper-icon-theme-git numix-themes-archblue-git rofi morc_menu xfce4-terminal
+#Configuration files for i3wm with Arc-Themed i3 & terminal 2017-05-08
+#To be placed in ~/.config:
+#conky
+#i3
+#i3status
+ 
+#To be placed in ~/.local/share or ~/.fonts
+#fonts
+ 
+#To be placed in /usr/bin
+#i3exit
+#i3lock
+ 
+#To be placed in ~/
+#.bashrc
+#.Xresources
+ 
+#Optional:
+#Configuration file for ranger (File manager)
+#rc.conf (~/.config/ranger
+#Configuration file for dunst (Notification app)
+#dunstrc (~/.config
+ 
+#Packages used in configuration: nm-applet pa-applet nitrogen compton xautolock i3gaps i3status i3lock powerline lxappearance #rofi morc_menu demnu rxvt-unicode
+ 
+#Themes and Icons:
+#Arc-Theme https://github.com/horst3180/arc-theme
+#Icons https://github.com/horst3180/arc-icon-theme
+
+#To get powerline to work: https://wiki.archlinux.org/index.php/Powerline
+
