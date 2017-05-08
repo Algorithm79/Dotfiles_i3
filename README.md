@@ -4,28 +4,28 @@ conky
 i3
 i3status
  
-#To be placed in ~/.local/share or ~/.fonts
-#fonts
+To be placed in ~/.local/share or ~/.fonts
+fonts
  
-#To be placed in /usr/bin
-#i3exit
-#i3lock
+To be placed in /usr/bin
+i3exit
+i3lock
  
-#To be placed in ~/
-#.bashrc
-#.Xresources
+To be placed in ~/
+.bashrc
+.Xresources
  
-#Optional:
-#Configuration file for ranger (File manager)
-#rc.conf (~/.config/ranger)
-#Configuration file for dunst (Notification app)
-#dunstrc (~/.config)
+Optional:
+Configuration file for ranger (File manager)
+rc.conf (~/.config/ranger)
+Configuration file for dunst (Notification app)
+dunstrc (~/.config)
  
-#Packages used in configuration: nm-applet pa-applet nitrogen compton xautolock i3gaps i3status i3lock powerline lxappearance #rofi morc_menu demnu rxvt-unicode
+Packages used in configuration: nm-applet pa-applet nitrogen compton xautolock i3gaps i3status i3lock powerline lxappearance rofi morc_menu demnu rxvt-unicode
  
-#Themes and Icons:
-#Arc-Theme https://github.com/horst3180/arc-theme
-#Icons https://github.com/horst3180/arc-icon-theme
+Themes and Icons:
+Arc-Theme https://github.com/horst3180/arc-theme
+Icons https://github.com/horst3180/arc-icon-theme
 
-#To get powerline to work: https://wiki.archlinux.org/index.php/Powerline
+To get powerline to work: https://wiki.archlinux.org/index.php/Powerline
 
