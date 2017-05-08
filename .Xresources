@@ -1,0 +1,121 @@
+! ------------------------------------------------------------------------------
+! My Xresources config 2017-04-22
+! ------------------------------------------------------------------------------
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+
+rofi.color-enabled: true
+rofi.color-window: argb:ee273238, #273238, argb:3a1e2529
+rofi.color-normal: argb:00273238, #c1c1c1, argb:3a273238, #394249, #ffffff
+rofi.color-active: argb:00273238, #80cbc4, argb:3a273238, #394249, #80cbc4
+rofi.color-urgent: argb:00273238, #ff1844, argb:3a273238, #394249, #ff1844
+
+URxvt.depth:                32
+URxvt.geometry:             90x30
+URxvt.transparent:          false
+URxvt.fading:               0
+! URxvt.urgentOnBell:         true
+! URxvt.visualBell:           true
+URxvt.loginShell:           true
+URxvt.saveLines:            1000
+URxvt.internalBorder:       3
+URxvt.lineSpace:            0
+urxvt.background: rgba:0000/0000/0200/c800
+
+! Appearance
+URxvt.font:           xft:Terminus (TTF) for Powerline:MediumForPowerline:size=10:antialias=true,xft:Inconsolata\ For\ Powerline:size=10:antialias=true
+URxvt.imFont:         xft:Terminus (TTF) for Powerline:MediumForPowerline:size=10:antialias=true,xft:Inconsolata\ For\ Powerline:size=10:antialias=true
+URxvt.boldFont:       xft:Terminus (TTF) for Powerline:MediumForPowerline:size=10:antialias=true,xft:Inconsolata\ For\ Powerline:size=10:antialias=true
+URxvt.italicFont:     xft:Terminus (TTF) for Powerline:MediumForPowerline:size=10:antialias=true,xft:Inconsolata\ For\ Powerline:size=10:antialias=true
+URxvt.boldItalicFont: xft:Terminus (TTF) for Powerline:MediumForPowerline:size=10:antialias=true,xft:Inconsolata\ For\ Powerline:size=10:antialias=true
+
+! Fix font space
+URxvt*letterSpace: -6
+
+! Scrollbar
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
+
+! Perl extensions
+URxvt.perl-ext-common:      default,matcher
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          chromium
+
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         true
+
+*background: #002b36
+*foreground: #657b83
+!!*fading: 40
+*fadeColor: #002b36
+*cursorColor: #93a1a1
+*pointerColorBackground: #586e75
+*pointerColorForeground: #93a1a1
+
+! colors
+*.cursorColor:  #b3bdcb
+*.background: #404552
+*.foreground: #b3bdcb
+! Black + DarkGrey
+*.color0:  #404552
+*.color8:  #2a303b
+! DarkRed + Red
+*.color1:  #cc575d
+*.color9:  #a3464a
+! DarkGreen + Green
+*.color2:  #2679db
+*.color10: #75a9e8
+! DarkYellow + Yellow
+*.color3:  #b3bdcb
+*.color11: #CAD1DB
+! DarkBlue + Blue
+*.color4:  #5294e2
+*.color12: #97bfee
+! DarkMagenta + Magenta
+*.color5:  #404552
+*.color13: #686d79
+! DarkCyan + Cyan
+*.color6:  #b3bdcb
+*.color14: #383c4a
+! LightGrey + White
+*.color7:  #E1E5EA
+*.color15: #ffffff
+! for 256 color stuff
+*.color24:  #076678
+*.color66:  #427b58
+*.color88:  #9d0006
+*.color96:  #8f3f71
+*.color100: #79740e
+*.color108: #8ec07c
+*.color109: #83a598
+*.color130: #af3a03
+*.color136: #b57614
+*.color142: #b8bb26
+*.color167: #fb4934
+*.color175: #d3869b
+*.color208: #fe8019
+*.color214: #fabd2f
+*.color223: #ebdbb2
+*.color228: #f4e8ba
+*.color229: #fdf4c1
+*.color230: #ffffc8
+*.color234: #1d2021
+*.color235: #404552
+*.color236: #32302f
+*.color237: #3c3836
+*.color239: #504945
+*.color241: #665c54
+*.color243: #7c6f64
+*.color244: #928374
+*.color245: #928374
+*.color246: #a89984
+*.color248: #bdae93
+*.color250: #d5c4a1
+
