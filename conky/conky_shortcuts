@@ -26,6 +26,7 @@ ${color2}switch to workspace 1-10 - ${color}mod+1-10
 ${color2}send to workspace 1-10 - ${color}mod+Ctrl+1-10
 ${color2}navigate workspaces - ${color}mod+arrowkeys 
 ${color2}toggle floating - ${color}mod+Shift+Space
+${color2}take screenshot - ${color}printscreen
 ${color2}exit - ${color}mod+del
 
 default mod=<Super>

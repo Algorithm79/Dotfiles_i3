@@ -27,7 +27,7 @@ order += "tztime local"
 # order += "run_watch VPN"
 
 cpu_usage {
-format = "   %usage "
+format = "   %usage "
 }
 load {
 format = " load %1min "
@@ -51,7 +51,7 @@ format_up = " lan: %ip %speed "
 format_down = " no lan "
 }
 tztime local {
-format = "   %Y-%m-%d %H:%M:%S "
+format = "   %Y-%m-%d   %H:%M:%S "
 #format = " %m.%d.%H:%M "
 }
 

@@ -42,5 +42,8 @@ ${execi 10000 awk -F= '/EASE=/ {printf $2" "} /NAME/ {print $2}' /etc/lsb-releas
 ${voffset 10}${color2}${alignr}${execi 1200 whoami}@${nodename}
 ${alignr}${color2}${font Cantarell:size=10}uptime: ${color}${uptime_short}
 ${voffset 5}${color2}${font Cantarell:size=10}${alignr}kernel: ${color}${kernel}
+
+#${voffset 5}${color2}MPD$alignr${if_mpd_playing} ${color}${mpd_artist} ${mpd_title} 
+#${color}${mpd_bar 3 2}
 ]]
 

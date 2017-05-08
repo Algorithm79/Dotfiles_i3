@@ -1,15 +1,16 @@
-# Magnus i3 Config File 2017-01-30
-# ArchBlue Numix Themed
+# Magnus i3 Config File 2017-03-19
+# Arc-Dark Themed
 
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Cantarell 10
+font pango:monospace 10
+
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:Cantarell 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -22,7 +23,7 @@ font pango:Cantarell 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -34,7 +35,8 @@ bindsym $mod+d exec dmenu_run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+m exec morc_menu
-bindsym $mod+z exec rofi -show run -lines 3 -bw 1 -font "Cantarell 18" -opacity "75" 
+#bindsym $mod+z exec rofi -show run -lines 3 -bw 1 -font "Cantarell 18" -opacity "75" 
+bindsym $mod+z exec rofi -show run -lines 3 -eh 1 -width 100 -padding 800 -opacity "85" -font "Cantarell 18"
 
 # change focus
 bindsym $mod+j focus left
@@ -86,16 +88,16 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1 "
-set $workspace2 "2 "
-set $workspace3 "3 "
-set $workspace4 "4 "
-set $workspace5 "5 "
-set $workspace6 "6 "
-set $workspace7 "7 "
-set $workspace8 "8 "
-set $workspace9 "9 "
-set $workspace10 "10 "
+set $workspace1 "1:Web "
+set $workspace2 "2:Terminal "
+set $workspace3 "3:File Manager "
+set $workspace4 "4:Music "
+set $workspace5 "5:Video "
+set $workspace6 "6:Game "
+set $workspace7 "7:Email "
+set $workspace8 "8:Work "
+set $workspace9 "9:Misc "
+set $workspace10 "10:Spotify "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -121,15 +123,24 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
-#Open applications on specific workspaces
+# open applications on specific workspaces
 assign [class="Chromium"] $workspace1
+assign [class="Google-chrome"] $workspace1
+assign [class="Firefox"] $workspace1
 assign [class="Nautilus"] $workspace3
 assign [class="Thunderbird"] $workspace7
 assign [class="Spotify"] $workspace10
 for_window [class="Spotify"] move to workspace $workspace10 
 assign [class="Rhythmbox"] $workspace4
+assign [class="Audacious"] $workspace4
 assign [class="Gnome-mplayer"] $workspace5
+assign [class="Vlc"] $workspace5
+assign [class="Totem"] $workspace5
+assign [class="MPlayer"] $workspace5
 assign [class="Steam"] $workspace6
+assign [class="Gimp"] $workspace8
+assign [class="Photoshop.exe"] $workspace8
+assign [class="Gthumb"] $workspace8
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -165,30 +176,46 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-#Define colors used
-set $bg-color 	         #333333
-set $inactive-bg-color   #333333
-set $text-color          #ffffff
-set $inactive-text-color #cecece
-set $urgent-bg-color     #1793d1
+# define colors used
+set $bg-color 	         #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #5294e2
 
-#Windows          Border    Background    Text     Indicator
+# windows         Border    Background    Text     Indicator
 client.focused    #1793d1   #1793d1       #ffffff
-client.unfocused  #333333   #333333       #ffffff
+client.unfocused  #2f343f   #2f343f       #ffffff
 
-#Windows starting in floating mode
+# windows starting in floating mode
 #for_window [class="Spotify"] floating enable
 for_window [class="Transmission"] floating enable
 for_window [class="Lxappearance"] floating enable border normal
 for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Xfce4-taskmanager"] floating enable border normal
+for_window [class="Gnome-system-monitor"] floating enable
+for_window [class="Simplescreenrecorder"] floating enable
+for_window [class="Xsensors"] floating enable
+for_window [class="Mainwindow.py"] floating enable
+for_window [class="etcher"] floating enable
+for_window [class="Galculator"] floating enable border normal
+for_window [class="Audacious"] floating enable border normal
+for_window [class="Nautilus"] floating enable border normal
+for_window [class="Org.gnome.Weather.Application"] floating enable border normal
+#for_window [class="Photoshop.exe"] floating enable 
 #for_window [class="(?i)virtualbox"] floating enable border normal
 
-#volume control
+# volume control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
-# Status Bar
+# screenshot
+bindsym Print exec scrot $HOME/Bilder/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym Mod1+Print exec scrot -u $HOME/Bilder/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym Mod1+Shift+Print exec scrot -s $HOME/Bilder/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+
+# i3 status
 bar {
         position top
 	status_command i3status
@@ -202,14 +229,14 @@ bar {
 	}
 }
 
-#i3 gaps
+# i3 gaps
 for_window [class="^.*"] border pixel 1
-gaps inner 10
+gaps inner 20
 gaps outer -4
 smart_gaps on
 smart_borders on
 
-# Set shut down, restart and locking features
+# shut down, restart and locking features
 bindsym $mod+Delete mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
@@ -226,10 +253,13 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-#Autostarted applications
+# autostarted applications
+exec --no-startup-id caffeine
 exec --no-startup-id nm-applet
 exec --no-startup-id pa-applet
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id compton -f --config /home/magnus/.config/i3/compton.conf
+exec --no-startup-id nitrogen --restore; sleep 1;
+exec --no-startup-id compton --config ~/.config/i3/compton.conf -b
 exec --no-startup-id .config/conky/start_conky
 exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id dunst
+exec --no-startup-id kalu
