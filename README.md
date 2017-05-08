@@ -21,7 +21,7 @@ rc.conf ~/.config/ranger
 Configuration file for dunst
 dunstrc ~/.config
  
-Packages used in configuration: nm-applet pa-applet nitrogen neofetch compton xautolock i3gaps i3status i3lock powerline lxappearance rofi morc_menu dunst demnu rxvt-unicode
+Packages used in configuration: nm-applet pa-applet nitrogen neofetch compton xautolock i3gaps i3status i3lock powerline lxappearance rofi morc_menu dunst demnu rxvt-unicode scrot
  
 Themes and Icons:
 Arc-Theme https://github.com/horst3180/arc-theme
