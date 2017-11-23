@@ -1,16 +1,16 @@
-# Magnus i3 Config File 2017-03-19
+# i3 Config File 2017-11-23
 # Arc-Dark Themed
 
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 10
+font pango:Driod Sans 10, FontAwesome
 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Cantarell 10
+font pango:Droid Sans 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -29,14 +29,17 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec " dmenu_run -nf '#F3F4F5' -nb '#2F343F' -sb '#1793D1' -sf '#f3f4f5' -fn 'monospace-10' -p 'run:'"
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+m exec morc_menu
-#bindsym $mod+z exec rofi -show run -lines 3 -bw 1 -font "Cantarell 18" -opacity "75" 
-bindsym $mod+z exec rofi -show run -lines 3 -eh 1 -width 100 -padding 800 -opacity "85" -font "Cantarell 18"
+
+# start rofi (dmenu mode)
+bindsym $mod+z exec i3-dmenu-desktop --dmenu='rofi -dmenu -i -lines 10 -eh 1 -width 50 -padding 50 -opacity "85" -font "Droid Sans 16"'  
+
+# start rofi (window mode)
+bindsym $mod+Tab exec rofi -show window -i -lines 10 -eh 1 -width 50 -padding 50 -opacity "85" -font "Droid Sans 16"
 
 # change focus
 bindsym $mod+j focus left
@@ -128,6 +131,8 @@ assign [class="Chromium"] $workspace1
 assign [class="Google-chrome"] $workspace1
 assign [class="Firefox"] $workspace1
 assign [class="Nautilus"] $workspace3
+assign [class="Pcmanfm"] $workspace3
+assign [class="Thunar"] $workspace3
 assign [class="Thunderbird"] $workspace7
 assign [class="Spotify"] $workspace10
 for_window [class="Spotify"] move to workspace $workspace10 
@@ -184,26 +189,32 @@ set $inactive-text-color #676E7D
 set $urgent-bg-color     #5294e2
 
 # windows         Border    Background    Text     Indicator
-client.focused    #1793d1   #1793d1       #ffffff
-client.unfocused  #2f343f   #2f343f       #ffffff
+client.focused    #676E7D   #676E7D       #ffffff  #676E7D
+client.unfocused  #2f343f   #2f343f       #ffffff  #676E7D
 
 # windows starting in floating mode
-#for_window [class="Spotify"] floating enable
-for_window [class="Transmission"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="Lightdm-gtk-greeter-settings"] floating enable
+for_window [class="Spotify"] floating enable border normal
+for_window [class="Transmission"] floating enable border normal
 for_window [class="Lxappearance"] floating enable border normal
-for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Xfce4-taskmanager"] floating enable border normal
-for_window [class="Gnome-system-monitor"] floating enable
-for_window [class="Simplescreenrecorder"] floating enable
-for_window [class="Xsensors"] floating enable
-for_window [class="Mainwindow.py"] floating enable
-for_window [class="etcher"] floating enable
+for_window [class="Gnome-system-monitor"] floating enable border normal
+for_window [class="Simplescreenrecorder"] floating enable border normal
+for_window [class="Xsensors"] floating enable border normal
+for_window [class="Nitrogen"] floating enable border normal
+#for_window [class="Mainwindow.py"] floating enable border normal
+for_window [class="etcher"] floating enable border normal
 for_window [class="Galculator"] floating enable border normal
 for_window [class="Audacious"] floating enable border normal
-for_window [class="Nautilus"] floating enable border normal
-for_window [class="Org.gnome.Weather.Application"] floating enable border normal
+for_window [class="Nautilus"] floating enable
+for_window [class="Org.gnome.Weather.Application"] floating enable
 #for_window [class="Photoshop.exe"] floating enable 
-#for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="milkytracker"] floating enable
+for_window [class="Arandr"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="minergate"] floating enable
 
 # volume control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute
@@ -217,8 +228,11 @@ bindsym Mod1+Shift+Print exec scrot -s $HOME/Bilder/Screenshots/`date +%Y-%m-%d_
 
 # i3 status
 bar {
+	font xft:Droid Sans Mono, FontAwesome 10
         position top
-	status_command i3status
+	status_command bumblebee-status -m cpu disk:root memory datetime mpd -p root.path=/ time.format="%H:%M CW %V" date.format="%A, %d %b %Y" -t solarized-powerline
+	#tray_output secondary
+	#output HDMI-A-0
   	colors {
 		background $bg-color
 	    	separator #757575
@@ -227,16 +241,25 @@ bar {
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	}
+	
 }
 
+
+
+# window style
+new_window pixel 2
+new_float normal
+hide_edge_borders none
+
+
 # i3 gaps
-for_window [class="^.*"] border pixel 1
+#for_window [class="^.*"] border pixel 2
 gaps inner 20
-gaps outer -4
+gaps outer 2
 smart_gaps on
 smart_borders on
 
-# shut down, restart and locking features
+# shut down, restart and locking features (requires i3exit script in /usr/bin)
 bindsym $mod+Delete mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
@@ -253,6 +276,9 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
+# screensetup
+#exec_always --no-startup-id xrandr --output DisplayPort-0 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DVI-D-0 --mode 1920x1200 --pos 1920x0 --rotate normal --output HDMI-A-0 --off
+
 # autostarted applications
 exec --no-startup-id caffeine
 exec --no-startup-id nm-applet
@@ -260,6 +286,8 @@ exec --no-startup-id pa-applet
 exec --no-startup-id nitrogen --restore; sleep 1;
 exec --no-startup-id compton --config ~/.config/i3/compton.conf -b
 exec --no-startup-id .config/conky/start_conky
+exec --no-startup-id xset dpms 600
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec --no-startup-id dunst
-exec --no-startup-id kalu
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
