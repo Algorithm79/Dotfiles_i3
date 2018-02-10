@@ -1,4 +1,6 @@
-Update: Now uses bumblebee status bar
+
+Default terminal used: https://github.com/Algorithm79/st
+just change to urxvt in i3 config if thats more your style both have same color schems and transparency
 
 Configuration files for i3wm with Arc-Themed i3 & terminal 2017-05-08
 To be placed in ~/.config:
