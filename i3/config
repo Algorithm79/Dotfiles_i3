@@ -5,12 +5,12 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Droid Sans 8
+font pango:Droid Sans 10
 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Droid Sans 8
+font pango:Droid Sans 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -23,7 +23,7 @@ font pango:Droid Sans 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -216,6 +216,7 @@ for_window [class="milkytracker"] floating enable
 for_window [class="Arandr"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="minergate"] floating enable border normal
+for_window [class="Xarchiver"] floating enable
 
 # volume control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute
