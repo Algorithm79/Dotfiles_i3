@@ -143,6 +143,7 @@ assign [class="Gnome-mplayer"] $workspace5
 assign [class="Vlc"] $workspace5
 assign [class="Totem"] $workspace5
 assign [class="MPlayer"] $workspace5
+assign [class="mpv"] $workspace5
 assign [class="Steam"] $workspace6
 assign [class="Gimp"] $workspace8
 assign [class="Photoshop.exe"] $workspace8
@@ -209,6 +210,7 @@ for_window [class="etcher"] floating enable border normal
 for_window [class="Galculator"] floating enable border normal
 for_window [class="Audacious"] floating enable border normal
 for_window [class="Nautilus"] floating enable
+for_window [class="Thunar"] floating enable 
 for_window [class="Org.gnome.Weather.Application"] floating enable
 #for_window [class="Photoshop.exe"] floating enable 
 for_window [class="(?i)virtualbox"] floating enable border normal
@@ -230,7 +232,7 @@ bindsym Mod1+Shift+Print exec scrot -s $HOME/Bilder/Screenshots/`date +%Y-%m-%d_
 
 # i3 status
 bar {
-	font xft:Droid Sans Mono 8, FontAwesome 10
+	font xft:Droid Sans Mono 10, FontAwesome 10
         position top
 	status_command bumblebee-status -m cpu disk:root memory datetime mpd -p root.path=/ time.format="%H:%M CW %V" date.format="%A, %d %b %Y" -t solarized-powerline
 	#tray_output secondary
@@ -259,7 +261,7 @@ hide_edge_borders none
 gaps inner 20
 gaps outer 2
 #smart_gaps on
-smart_borders on
+#smart_borders on
 
 
 # shut down, restart and locking features
