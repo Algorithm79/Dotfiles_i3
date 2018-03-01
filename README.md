@@ -14,6 +14,9 @@ fonts
 To be placed in ~/
 .bashrc
 .Xresources
+
+To be placed in /usr/bin/
+rofi-computer
  
 Optional:
 Configuration file for ranger
