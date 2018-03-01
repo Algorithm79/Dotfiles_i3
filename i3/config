@@ -1,4 +1,4 @@
-# i3 Config File 2017-11-23
+# i3 Config File 2018-03-01
 # Arc-Dark Themed
 
 set $mod Mod4
@@ -225,6 +225,12 @@ bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
+# media player controls
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioPause exec mpc pause
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+
 # screenshot
 bindsym Print exec scrot $HOME/Bilder/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
 bindsym Mod1+Print exec scrot -u $HOME/Bilder/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
@@ -295,7 +301,7 @@ exec --no-startup-id pa-applet
 exec --no-startup-id nitrogen --restore; sleep 1;
 exec --no-startup-id compton --config ~/.config/i3/compton.conf -b
 exec --no-startup-id xset dpms 600
-exec --no-startup-id xautolock -time 10 -locker "betterlockscreen -l"
+#exec --no-startup-id xautolock -time 10 -locker "betterlockscreen -l"
 exec --no-startup-id dunst
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id mpd
