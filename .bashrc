@@ -3,23 +3,34 @@
 #
 
 # If not running interactively, don't do anything
+
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias clock='tty-clock -c -B -D'
+alias youtube='mpsyt'
+alias tui='s-tui'
+alias nhiesa='toilet Hello Nhiesa --rainbow --font smblock | ponysay'
 
-export PS1="\[\033[38;5;12m\][\[$(tput sgr0)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\]\[\033[38;5;12m\]@\[$(tput sgr0)\]\[\033[38;5;7m\]\h\[$(tput sgr0)\]\[\033[38;5;12m\]]\[$(tput sgr0)\]\[\033[38;5;15m\]: \[$(tput sgr0)\]\[\033[38;5;7m\]\w\[$(tput sgr0)\]\[\033[38;5;12m\]>\[$(tput sgr0)\]\[\033[38;5;10m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+if [ -n "$SSH_CONNECTION" ]; then
+export PS1="\[$(tput setaf 1)\]┌─╼ \[$(tput setaf 7)\][\w]\n\[$(tput setaf 1)\]\$(if [[ \$? == 0 ]]; then echo \"\[$(tput setaf 1)\]└────╼ \[$(tput setaf 7)\][ssh]\"; else echo \"\[$(tput setaf 1)\]└╼ \[$(tput setaf 7)\][ssh]\"; fi) \[$(tput setaf 7)\]"
+else
+export PS1="\[$(tput setaf 1)\]┌─╼ \[$(tput setaf 7)\][\w]\n\[$(tput setaf 1)\]\$(if [[ \$? == 0 ]]; then echo \"\[$(tput setaf 1)\]└────╼\"; else echo \"\[$(tput setaf 1)\]└╼\"; fi) \[$(tput setaf 7)\]"
+fi
+
+trap 'echo -ne "\e[0m"' DEBUG
 
 [ -e "/etc/DIR_COLORS" ] && DIR_COLORS="/etc/DIR_COLORS"
 [ -e "$HOME/.dircolors" ] && DIR_COLORS="$HOME/.dircolors"
 [ -e "$DIR_COLORS" ] || DIR_COLORS=""
 eval "`dircolors -b $DIR_COLORS`"
 
-export PYTHONPATH=/usr/lib/python3.6/site-packages
+export PYTHONPATH=/usr/lib/python3.7/site-packages
 powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+#POWERLINE_BASH_CONTINUATION=1
+#POWERLINE_BASH_SELECT=1
+#. /usr/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
 
 extract () {
 if [ -f $1 ] ; then
@@ -42,4 +53,19 @@ if [ -f $1 ] ; then
  fi
 }
 
-neofetch
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+#(cat ~/.cache/wal/sequences &)
+
+# Alternative (blocks terminal for 0-3ms)
+#cat ~/.cache/wal/sequences
+
+# To add support for TTYs this line can be optionally added.
+#source ~/.cache/wal/colors-tty.sh
+
+#neofetch --w3m ~/Bilder/Wallpapers/dott-color.png --size 300px 300px
+ufetch
+
+export EDITOR='vim'
+export VISUAL='vim'
