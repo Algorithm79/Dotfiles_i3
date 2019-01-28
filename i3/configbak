@@ -1,0 +1,281 @@
+# i3 Config File 2018-03-01
+# Arc-Dark Themed
+
+set $mod Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:Droid Sans 10
+
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+font pango:Droid Sans 10
+
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec st
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec " dmenu_run -nf '#F3F4F5' -nb '#2F343F' -sb '#1793D1' -sf '#f3f4f5' -fn 'monospace-10' -p 'run:'"
+
+# start rofi (dmenu mode)
+bindsym $mod+z exec i3-dmenu-desktop --dmenu='rofi -dmenu -i -lines 10 -eh 1 -width 50 -padding 50 -columns 2 -opacity "85" -font "Droid Sans 16"'   
+
+# start rofi (window mode)
+bindsym $mod+Tab exec rofi -show window -i -lines 10 -eh 1 -width 50 -padding 50 -opacity "85" -font "Droid Sans 16"
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+odiaeresis focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+odiaeresis move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+set $workspace1 "1:"
+set $workspace2 "2:"
+set $workspace3 "3:"
+set $workspace4 "4:"
+set $workspace5 "5:"
+set $workspace6 "6:"
+set $workspace7 "7:"
+set $workspace8 "8:"
+set $workspace9 "9:"
+set $workspace10 "10:"
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+# open applications on specific workspaces
+assign [class="Chromium"] $workspace1
+assign [class="Google-chrome"] $workspace1
+assign [class="Firefox"] $workspace1
+assign [class="qutebrowser"] $workspace1
+assign [class="Nautilus"] $workspace3
+assign [class="Pcmanfm"] $workspace3
+assign [class="Thunar"] $workspace3
+assign [class="Thunderbird"] $workspace7
+assign [class="Spotify"] $workspace10
+for_window [class="Spotify"] move to workspace $workspace10 
+assign [class="Rhythmbox"] $workspace4
+assign [class="Audacious"] $workspace4
+assign [class="Gnome-mplayer"] $workspace5
+assign [class="Vlc"] $workspace5
+assign [class="Totem"] $workspace5
+#assign [class="MPlayer"] $workspace5
+#assign [class="mpv"] $workspace5
+assign [class="Steam"] $workspace6
+assign [class="Gimp"] $workspace8
+assign [class="Photoshop.exe"] $workspace8
+assign [class="Gthumb"] $workspace8
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+#bindsym $mod+Shift+e exec ./config/i3/scripts/i3-exit
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym odiaeresis resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+client.focused          $fg     $fg     $fg  $fg       $fg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
+
+# PROTIP: You can also dynamically set dmenu's colors this way:
+#bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
+
+# windows starting in floating mode
+for_window [title="File Transfer*"] floating enable
+for_window [class="Lightdm-gtk-greeter-settings"] floating enable border normal
+#for_window [class="Spotify"] floating enable border normal
+for_window [class="Transmission"] floating enable border normal
+for_window [class="Lxappearance"] floating enable border normal
+for_window [class="Xfce4-taskmanager"] floating enable border normal
+for_window [class="Gnome-system-monitor"] floating enable border normal
+for_window [class="Simplescreenrecorder"] floating enable border normal
+for_window [class="Xsensors"] floating enable border normal
+for_window [class="Nitrogen"] floating enable border normal
+#for_window [class="Mainwindow.py"] floating enable border normal
+for_window [class="etcher"] floating enable border normal
+for_window [class="Galculator"] floating enable border normal
+for_window [class="Audacious"] floating enable border normal
+for_window [class="Nautilus"] floating enable
+for_window [class="Thunar"] floating enable
+for_window [class="Org.gnome.Weather.Application"] floating enable
+#for_window [class="Photoshop.exe"] floating enable 
+for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="milkytracker"] floating enable
+for_window [class="Arandr"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="minergate"] floating enable border normal
+for_window [class="Xarchiver"] floating enable
+for_window [class="Gzdoom"] floating enable border normal
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="FS-UAE Launcher 2.8.3 (Not logged in)"] floating enable
+for_window [class="Nm-connection-editor"] floating enable border normal 
+for_window [class="MPlayer"] floating enable
+for_window [class="mpv"] floating enable 
+for_window [title="dosbox"] floating enable
+
+# volume control
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2%- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# media player controls
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioPause exec mpc pause
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+
+# screenshot
+bindsym Print exec scrot $HOME/Bilder/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym Mod1+Print exec scrot -u $HOME/Bilder/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym Mod1+Shift+Print exec scrot -s $HOME/Bilder/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+
+# window style
+new_window pixel 3
+new_float normal 3
+hide_edge_borders none
+
+
+# i3 gaps
+#for_window [class="^.*"] border pixel 2
+gaps inner 20
+gaps outer 2
+#smart_gaps o
+#smart_borders on
+
+# shut down, restart and locking features
+bindsym $mod+Delete exec rofi-computer
+bindsym $mod+shift+Delete exec betterlockscreen -l dimblur
+
+# screensetup
+exec_always --no-startup-id xrandr --output DisplayPort-0 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DVI-D-0 --mode 1920x1200 --pos 1920x0 --rotate normal --output HDMI-A-0 --off
+
+# autostarted applications
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+#exec --no-startup-id feh --bg-scale ~/.config/wall.png
+exec --no-startup-id nitrogen --restore; sleep 1;
+exec --no-startup-id compton --config ~/.config/compton.conf -b
+exec --no-startup-id xset dpms 600
+exec --no-startup-id xautolock -time 10 -locker "betterlockscreen -l dimblur"
+exec --no-startup-id dunst
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id wal -R
+exec --no-startup-id mpd
