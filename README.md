@@ -11,3 +11,5 @@
 - [Compton](https://github.com/chjj/compton) (compositor)
 - [Nitrogen](https://github.com/l3ib/nitrogen) (Background browser and setter)
 
+ Everything works and looks the same using.
+ rxvt-unicode or the classic xterm 
