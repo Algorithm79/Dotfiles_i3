@@ -1,4 +1,6 @@
 # Dotfiles_i3
 Configuration files for my i3wm
 
-![ScreenShot](https://imgur.com/a/sH1eCmJ)
+
+![alt text](https://raw.githubusercontent.com/Algorithm79/Dotfiles_i3/master/screenshot.png)
+
