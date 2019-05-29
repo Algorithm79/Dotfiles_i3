@@ -11,7 +11,7 @@ alias grep='grep --color=auto'
 alias clock='tty-clock -c -B -D'
 alias youtube='mpsyt'
 alias tui='s-tui'
-alias nhiesa='toilet Hello Nhiesa --rainbow --font smblock | ponysay'
+#alias trim='sudo fstrim / -v'
 
 if [ -n "$SSH_CONNECTION" ]; then
 export PS1="\[$(tput setaf 1)\]┌─╼ \[$(tput setaf 7)\][\w]\n\[$(tput setaf 1)\]\$(if [[ \$? == 0 ]]; then echo \"\[$(tput setaf 1)\]└────╼ \[$(tput setaf 7)\][ssh]\"; else echo \"\[$(tput setaf 1)\]└╼ \[$(tput setaf 7)\][ssh]\"; fi) \[$(tput setaf 7)\]"
@@ -53,6 +53,8 @@ if [ -f $1 ] ; then
  fi
 }
 
+[ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
+
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
@@ -64,8 +66,12 @@ if [ -f $1 ] ; then
 # To add support for TTYs this line can be optionally added.
 #source ~/.cache/wal/colors-tty.sh
 
-#neofetch --w3m ~/Bilder/Wallpapers/dott-color.png --size 300px 300px
+#neofetch --w3m ~/Dotfiles/Icons/tentacle.png --size 300px 300px 
 ufetch
 
 export EDITOR='vim'
 export VISUAL='vim'
+
+#if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+#   exec startx
+#fi

@@ -2,16 +2,6 @@
 ! My Xresources config 2019-01-26
 ! ------------------------------------------------------------------------------
 
-! ------------------------------------------------------------------------------
-! ROFI Color theme
-! ------------------------------------------------------------------------------
-
-rofi.color-enabled: true
-rofi.color-window: argb:ee273238, #273238, argb:3a1e2529
-rofi.color-normal: argb:00273238, #c1c1c1, argb:3a273238, #394249, #ffffff
-rofi.color-active: argb:00273238, #80cbc4, argb:3a273238, #394249, #80cbc4
-rofi.color-urgent: argb:00273238, #ff1844, argb:3a273238, #394249, #ff1844
-
 URxvt.depth:                32
 URxvt.geometry:             120x30
 !URxvt.transparent:          true
@@ -23,11 +13,25 @@ URxvt.loginShell:           true
 URxvt.saveLines:            1000
 URxvt.internalBorder:       3
 URxvt.lineSpace:            0
-urxvt.background: rgba:0000/0000/0200/c800
+URxvt.background: rgba:2f00/3400/3f00/c800
 
 ! Appearance
 !URxvt.font: xft:Inconsolata Nerd Font Mono:size=15, xft:DejaVu Sans:size=12
-URxvt.font: xft:Iosevka:size=12
+URxvt.font: xft:Iosevka:size=10
+URxvt.boldFont: xft:Iosevka:size=10
+
+URxvt*letterSpace: 1
+!----------------
+!  Xft Settings
+!----------------
+
+Xft*dpi: 96
+Xft*antialias:  true
+Xft*hinting:    true
+Xft*rgba:       rgb
+Xft*autohint:   true
+Xft*hintstyle:  hintfull
+Xft*lcdfilter:  lcddefault
 
 ! Scrollbar
 URxvt.scrollStyle:          rxvt
@@ -47,7 +51,7 @@ URxvt.cursorUnderline:      false
 URxvt.pointerBlank:         true
 
 ! special
-*.foreground:   #f3f3f5
+*.foreground:   #ffffff
 *.background:   #2f343f
 !*.cursorColor:  #676E7D
 
@@ -87,3 +91,78 @@ URxvt.pointerBlank:         true
 *.alpha: 210
 !! Set a default font and font size as below:
 *.font: Iosevka-14;
+
+*.renderTable: variable
+*.renderTable.variable.fontName: Sans
+*.renderTable.variable.fontSize: 8
+*.renderTable.variable.fontType: FONT_IS_XFT
+
+!!!
+!!!  Motif Resources:
+!!!
+ 
+ 
+!Mwm*title*fontList: "-adobe-helvetica-medium-r-normal--14-*-*-*-*-*-*-*"
+!Mwm*menu*fontList: "-adobe-helvetica-medium-r-normal--12-*-*-*-*-*-*-*"
+!Mwm*fontList: "-adobe-helvetica-medium-r-normal--12-*-*-*-*-*-*-*"
+
+!Mwm*title*fontList: "-misc-dejavu serif-bold-r-normal--14-*-*-*-*-*-*-*"
+!Mwm*menu*fontList: "-misc-dejavu serif-medium-r-normal--12-*-*-*-*-*-*-*"
+!Mwm*fontList: "-misc-dejavu serif-medium-r-normal--12-*-*-*-*-*-*-*"
+
+Mwm*feedback*fontList: -b&h-lucida-medium-r-*-*-14-*-*-*-*-*-*-*
+Mwm*icon*fontList: -b&h-lucida-medium-r-*-*-12-*-*-*-*-*-*-*
+Mwm*menu*fontList: -b&h-lucida-medium-r-*-*-14-*-*-*-*-*-*-*
+Mwm*title*fontList: -b&h-lucida-medium-r-*-*-14-*-*-*-*-*-*-*
+
+Mwm*moveOpaque:                 true
+Mwm*iconClick:                  false
+Mwm*iconPlacement:              left top tight
+Mwm*iconPlacementMargin:        10
+Mwm*iconDecoration:             label image
+ 
+Mwm*iconImageMaximum:           48x48
+ 
+Mwm*client*activeBackground:    #676E7D
+Mwm*client*background:          #2f343f
+ 
+Mwm*icon*activeBackground:      #676E7D
+Mwm*icon*background:            #2f343f
+ 
+Mwm*feedback*background:        #676E7D
+ 
+Mwm*background:                 #676E7D
+ 
+Mwm*frameStyle:                 slab
+Mwm*moveThreshold:              1
+ 
+ 
+!!!
+!!! Application-specific resources:
+!!!
+ 
+ 
+!!! XClock resources:
+ 
+Mwm*XClock.clientDecoration:    border
+ 
+XClock*foreground:              #676E7D
+XClock*background:              #2f343f
+XClock*render:                  true
+XClock*geometry:                85x85-10+10
+XClock.Clock.minorColor:        #5294e2
+XClock.Clock.hourColor:         #676E7D
+XClock.Clock.minuteColor:       #676E7D
+
+!!! XTerm resources:
+ 
+XTerm*loginShell:               true
+XTerm*metaSendsEscape:          true
+XTerm*faceName:                 Iosevka-10:antialias=on
+XTerm*geometry: 110x25
+ 
+XTerm*foreground:               #ffffff
+XTerm*background:               #2f343f
+ 
+XTerm*allowBoldFonts:           false
+XTerm*scrollBar:                false
