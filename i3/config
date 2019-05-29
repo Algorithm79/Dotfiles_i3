@@ -43,14 +43,13 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run -nf dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
-bindsym $mod+d exec " dmenu_run -b -nf '#F3F4F5' -nb '#2F343F' -sb '#1793D1' -sf '#f3f4f5' -fn 'Iosevka-10' -p 'run:'"
+bindsym $mod+d exec "dmenu_run -b -nf '#F3F4F5' -nb '#2F343F' -sb '#1793D1' -sf '#f3f4f5' -fn 'Iosevka-10' -p 'run:'"
 
 # start rofi (dmenu mode)
-bindsym $mod+z exec i3-dmenu-desktop --dmenu='rofi -dmenu -i -lines 10 -eh 1 -width 50 -padding 50 -columns 2 -opacity "85" -font "Iosevka 16"'   
+bindsym $mod+z exec rofi -show drun
 
 # start rofi (window mode)
-bindsym $mod+Tab exec rofi -show window -i -lines 10 -eh 1 -width 50 -padding 50 -opacity "85" -font "Iosevka 16"
+bindsym $mod+Tab exec rofi -show window
 
 # change focus
 bindsym $mod+j focus left
@@ -84,6 +83,8 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+# global fullscreen: across all monitors
+bindsym $mod+shift+f        fullscreen toggle global
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -111,7 +112,7 @@ set $workspace6 "6:"
 set $workspace7 "7:"
 set $workspace8 "8:"
 set $workspace9 "9:"
-set $workspace10 "10:"
+set $workspace10 "0:"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -229,6 +230,7 @@ client.placeholder      #2f343f #2f343f #ffffff #2f343f
 #bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
 
 # windows starting in floating mode
+for_window [instance="origin.exe"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="Lightdm-gtk-greeter-settings"] floating enable
 #for_window [class="Spotify"] floating enable
@@ -255,10 +257,12 @@ for_window [class="minergate"] floating enable
 for_window [class="Xarchiver"] floating enable
 for_window [class="Gzdoom"] floating enable 
 for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="Pavucontrol"] floating enable
 for_window [class="FS-UAE Launcher 2.8.3 (Not logged in)"] floating enable
 for_window [class="Nm-connection-editor"] floating enable 
 for_window [class="MPlayer"] floating enable
-for_window [class="mpv"] floating enable 
+for_window [class="mpv"] floating enable
+for_window [class="Blueman-manager"] floating enable 
 for_window [title="dosbox"] floating enable
 
 # volume control
@@ -282,7 +286,6 @@ new_window pixel 1
 new_float normal 1
 hide_edge_borders none
 
-
 # i3 gaps
 for_window [class="^.*"] border pixel 1
 gaps inner 20
@@ -295,16 +298,22 @@ bindsym $mod+Delete exec rofi-computer
 bindsym $mod+shift+Delete exec betterlockscreen -l dimblur
 
 # screensetup
-exec_always --no-startup-id xrandr --output DisplayPort-0 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DVI-D-0 --mode 1920x1200 --pos 1920x0 --rotate normal --output HDMI-A-0 --off
+#exec_always --no-startup-id xrandr --output DisplayPort-0 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DVI-D-0 --mode 1920x1200 --pos 1920x0 --rotate normal --output HDMI-A-0 --off
+#exec_always --no-startup-id xrandr --output DisplayPort-0  --mode 1920x1200 --output DVI-D-0 --mode 1920x1200 --right-of DisplayPort-0
+#fake-outputs 3840x1200+0+0
+
+# multi monitor support with the nVidia driver
+#force_xinerama yes
 
 # autostarted applications
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-#exec --no-startup-id nitrogen --restore; sleep 1;
-exec --no-startup-id feh --bg-scale --no-xinerama ~/.Wallpaper.jpg
+exec --no-startup-id nitrogen --restore; sleep 1;
+#exec --no-startup-id feh --bg-scale ~/.Wallpaper.*
 exec --no-startup-id compton --config ~/.config/compton.conf -b
+exec --no-startup-id .config/conky/start_conky
 exec --no-startup-id xset dpms 500
-exec --no-startup-id xautolock -time 10 -locker "betterlockscreen -l dimblur"
-exec --no-startup-id dunst
+exec --no-startup-id xautolock -time 10 -locker "betterlockscreen -l dim"
+exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id mpd
 exec --no-startup-id setxkbmap se
