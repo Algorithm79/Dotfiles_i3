@@ -10,6 +10,7 @@
 - [Conky](https://github.com/brndnmtthws/conky) (System monitor)
 - [Compton](https://github.com/chjj/compton) (compositor)
 - [Nitrogen](https://github.com/l3ib/nitrogen) (Background browser and setter)
+- [Arc-theme](https://github.com/horst3180/arc-theme) (GTK Theme)
 
 Terminals works and looks the same using
 rxvt-unicode or the classic xterm 
