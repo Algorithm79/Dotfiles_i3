@@ -68,7 +68,7 @@ scroll-down = i3wm-wsprev
 
 modules-left = rofi workspaces xwindow
 modules-center = date
-modules-right = mpd volume blue powermenu
+modules-right = mpd volume eth blue powermenu
  
 ;***************************Modules************************************
 
@@ -86,6 +86,13 @@ type = custom/text
 content = 
 content-foreground =  ${color.acolor}
 click-left = exec blueman-manager &
+
+;[module/nmeditor]
+;type = custom/text
+;content = 
+;content-foreground =  ${color.fg}
+;click-left = exec nm-connection-editor &
+
 
 [module/workspaces]
 type = internal/i3
@@ -194,6 +201,15 @@ format-disconnected = <label-disconnected>
 label-connected =  %essid%
 label-disconnected = 
 click-left = network &
+
+[module/eth]
+type = internal/network
+interface = enp5s0
+interval = 3.0
+;format-connected-prefix = 
+;format-connected-prefix-foreground = ${color.fg}
+label-connected = 
+format-disconnected = 
 
 [module/date]
 type = internal/date
