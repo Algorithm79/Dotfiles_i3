@@ -1,6 +1,15 @@
 ! ------------------------------------------------------------------------------
-! My Xresources config 2019-01-26
+!       __   ___  __   __        __   __   ___  __  
+! \_/ |__) |__  /__` /  \ |  | |__) /  ` |__  /__` 
+!./ \ |  \ |___ .__/ \__/ \__/ |  \ \__, |___ .__/ 
+!                                                  
+!My Xresources config 2019-05-30
+!
 ! ------------------------------------------------------------------------------
+
+!----------------
+!  URxvt settings
+!----------------
 
 URxvt.depth:                32
 URxvt.geometry:             120x30
@@ -21,6 +30,7 @@ URxvt.font: xft:Iosevka:size=10
 URxvt.boldFont: xft:Iosevka:size=10
 
 URxvt*letterSpace: 1
+
 !----------------
 !  Xft Settings
 !----------------
@@ -87,20 +97,27 @@ URxvt.pointerBlank:         true
 *.color7:       #f3f3f5
 *.color15:      #f3f3f5
 
+!----------------
+!  Xft Settings
+!----------------
+
 !! Transparency (0-255):
 *.alpha: 210
 !! Set a default font and font size as below:
 *.font: Iosevka-14;
+
+!------------------------------
+!  Betterlooking fonts for MWM
+!------------------------------
 
 *.renderTable: variable
 *.renderTable.variable.fontName: Sans
 *.renderTable.variable.fontSize: 8
 *.renderTable.variable.fontType: FONT_IS_XFT
 
-!!!
-!!!  Motif Resources:
-!!!
- 
+!------------------------------
+!  Motif settings
+!------------------------------
  
 !Mwm*title*fontList: "-adobe-helvetica-medium-r-normal--14-*-*-*-*-*-*-*"
 !Mwm*menu*fontList: "-adobe-helvetica-medium-r-normal--12-*-*-*-*-*-*-*"
@@ -136,12 +153,10 @@ Mwm*background:                 #676E7D
 Mwm*frameStyle:                 slab
 Mwm*moveThreshold:              1
  
- 
-!!!
-!!! Application-specific resources:
-!!!
- 
- 
+!---------------------------------
+!  Application-specific resources
+!---------------------------------
+
 !!! XClock resources:
  
 Mwm*XClock.clientDecoration:    border
