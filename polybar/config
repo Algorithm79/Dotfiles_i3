@@ -1,13 +1,16 @@
-;========================================================================
-;_______     ___   _____   ____  ____  ______        _       _______     
-;|_   __ \  .'   `.|_   _| |_  _||_  _||_   _ \      / \     |_   __ \    
-;  | |__) |/  .-.  \ | |     \ \  / /    | |_) |    / _ \      | |__) |   
-;  |  ___/ | |   | | | |   _  \ \/ /     |  __'.   / ___ \     |  __ /    
-; _| |_    \  `-'  /_| |__/ | _|  |_    _| |__) |_/ /   \ \_  _| |  \ \_  
-;|_____|    `.___.'|________||______|  |_______/|____| |____||____| |___| 
-;                                                     
-; Last Edited: 2019-05-29                     
-;========================================================================
+;****************************************************************************
+;* _______     ___   _____   ____  ____  ______        _       _______      *
+;* |_   __ \  .'   `.|_   _| |_  _||_  _||_   _ \      / \     |_   __ \    *
+;*   | |__) |/  .-.  \ | |     \ \  / /    | |_) |    / _ \      | |__) |   *
+;*   |  ___/ | |   | | | |   _  \ \/ /     |  __'.   / ___ \     |  __ /    *
+;*  _| |_    \  `-'  /_| |__/ | _|  |_    _| |__) |_/ /   \ \_  _| |  \ \_  *
+;* |_____|    `.___.'|________||______|  |_______/|____| |____||____| |___| *
+;*                                                                          *
+;*  Last Edited: 2019-05-29                                                 *
+;****************************************************************************
+
+
+;********************************Colors**************************************
 
 [color]
 
@@ -24,7 +27,7 @@ curgent = #e53935
 coccupied = #43a047
 
 
-;==========================================================
+;*******************************Bar************************************
 
 [bar/monitor1]
 monitor = ${env:MONITOR:}
@@ -46,16 +49,12 @@ border-color = ${xrdb:color0}
 module-margin-left = 2
 module-margin-right = 2
 
-;==========================================================
-
 font-1 = Iosevka:style=Medium:size=10;1
 font-0 = FontAwesome:fontformat=truetype:size=10;1
 font-3 = Font Awesome 5 Free:style=Regular:pixelsize=8;1
 font-4 = Font Awesome 5 Free:style=Solid:pixelsize=8;1
 font-5 = Font Awesome 5 Brands:pixelsize=8;1
 font-2 = sm4tik:pixelsize=10;1
-
-;==========================================================
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -67,23 +66,13 @@ cursor-scroll = ns-resize
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
-;== Module Location ========================================================
-
-modules-left = arch workspaces xwindow
+modules-left = rofi workspaces xwindow
 modules-center = date
 modules-right = mpd volume blue powermenu
  
-;== Modules ========================================================
+;***************************Modules************************************
 
-
-[module/weather]
-type = custom/script
-exec = ~/polybar-forecast/target/release/polybar-forecast
-exec-if = ping openweathermap.org -c 1
-interval = 600
-label-font = 0
-
-[module/arch]
+[module/rofi]
 type = custom/text
 content =  
 ;alt-icon = 
@@ -122,7 +111,9 @@ mount-0 = /
 ;mount-2 = /invalid/mountpoint
 label-mounted =   %used%/%total%
 label-unmounted = %mountpoint%: not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+label-unmounted-foreground = ${color.fg-alt}
+format-prefix-foreground = ${color.fg-alt}
+#format-underline = ${color.fg-alt}
 
 [module/xwindow]
 type = internal/xwindow
@@ -145,7 +136,7 @@ interval = 2
 format-prefix = " "
 label =  %gb_used%/%gb_total%
 format-prefix-foreground = ${color.fg-alt}
-format-underline = ${color.fg-alt}
+#format-underline = ${color.fg-alt}
 
 [module/battery]
 type = internal/battery
@@ -220,4 +211,4 @@ content-background = ${color.acolor}
 content-foreground = ${color.fg}
 click-left = /usr/bin/rofi-computer
 
-;== EOF ========================================================
+;********************************************************************
