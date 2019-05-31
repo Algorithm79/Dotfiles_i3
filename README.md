@@ -1,4 +1,4 @@
-# ~/.dotfiles
+# Dotfiles_i3
 
 ![screenshot](https://raw.githubusercontent.com/Algorithm79/Dotfiles_i3/master/screenshot.png)
 ## Essential stuff used in this config
