@@ -8,7 +8,7 @@ configuration {
   display-drun: "";
   display-window: "";
   display-windowcd: "";
-  show-icons: true;
+  show-icons: false;
   icon-theme: "Arc";
 }
 
