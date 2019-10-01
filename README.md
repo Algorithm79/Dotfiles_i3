@@ -2,6 +2,7 @@
 
 ![screenshot](https://raw.githubusercontent.com/Algorithm79/Dotfiles_i3/master/screenshot.png)
 ![screenshot](https://raw.githubusercontent.com/Algorithm79/Dotfiles_i3/master/screenshot2.png)
+![screenshot](https://raw.githubusercontent.com/Algorithm79/Dotfiles_i3/master/screenshot3.png)
 ## Essential stuff used in this config
 
 - [i3-gaps](https://github.com/Airblader/i3) (window manager) + [Polybar](https://github.com/polybar/polybar) (status bar)
