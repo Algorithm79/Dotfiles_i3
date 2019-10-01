@@ -74,7 +74,7 @@ content =  
 content-padding = 4
 content-background = ${colors.alert}
 content-foreground = ${colors.foreground}
-click-left = exec ~/.config/rofi/scripts/appsmenu.sh
+click-left = exec rofi -theme themes/app-launcher -show drun
 
 [module/blue]
 type = custom/text
