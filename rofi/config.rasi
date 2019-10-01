@@ -1,0 +1,11 @@
+configuration {
+  theme: "~/.cache/wal/colors-rofi-dark.rasi";
+  show-icons:         true;
+  icon-theme:         "Sardi-Mono";
+  cycle:              true;
+  hide-scrollbar:     true;
+  disable-history:    false;
+  modi:               "drun";
+  display-drun:       "apps";
+  columns: 2;
+}

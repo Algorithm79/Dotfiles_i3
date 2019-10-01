@@ -1,0 +1,19 @@
+@theme "themes/app-launcher"
+
+mainbox {
+	margin: 40% 20%;
+	children: [ message, listview ];
+}
+
+listview {
+	columns: 5;
+}
+
+element-icon {
+	size: 128;
+}
+
+element-text {
+	margin: 0.3em 0 0 0;
+	font: "Iosevka 15";
+}
