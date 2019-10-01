@@ -1,5 +1,0 @@
-rofi.font: Iosevka 16
-rofi.theme: ~/.config/rofi/theme.rasi
-rofi.separator-style: none
-rofi.columns: 2
-
