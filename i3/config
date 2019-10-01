@@ -13,7 +13,7 @@
 # |  ,   /  \   \     .'           \   \ .'           '---'       |  |,'  |  ,   / |   :    : 
 #  ---`-'    `--`-,,-'              `---`                         `--'     ---`-'   \   \  /  
 #                                                                                   `--`-'   
-# i3 Config File 2019-01-02 
+# i3 Config File 2019-10-01 
 
 set $mod Mod4
 
@@ -43,13 +43,13 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec "dmenu_run -b -nf '#F3F4F5' -nb '#2F343F' -sb '#1793D1' -sf '#f3f4f5' -fn 'Iosevka-10' -p 'run:'"
+bindsym $mod+d exec dmenu_run
 
 # start rofi (dmenu mode)
-bindsym $mod+z exec rofi -show drun
+bindsym $mod+z exec rofi -theme themes/app-launcher -show drun
 
 # start rofi (window mode)
-bindsym $mod+Tab exec rofi -show window
+bindsym $mod+Tab exec exec rofi -theme themes/app-launcher -show window
 
 # change focus
 bindsym $mod+j focus left
@@ -87,9 +87,9 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+shift+f        fullscreen toggle global
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -197,34 +197,34 @@ bindsym $mod+r mode "resize"
 
 # Manually set colors
 # define colors used
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #5294e2
+#set $bg-color 	         #2f343f
+#set $inactive-bg-color   #2f343f
+#set $text-color          #f3f4f5
+#set $inactive-text-color #676E7D
+#set $urgent-bg-color     #5294e2
 
-client.focused          #676E7D #676E7D #FFFFFF #676E7D
-client.focused_inactive #2f343f #2f343f #FFFFFF #2f343f
-client.unfocused        #2f343f #2f343f #FFFFFF #2f343f
-client.urgent           #2f343f #2f343f #ffffff #2f343f
-client.placeholder      #2f343f #2f343f #ffffff #2f343f
+#client.focused          #676E7D #676E7D #FFFFFF #676E7D
+#client.focused_inactive #2f343f #2f343f #FFFFFF #2f343f
+#client.unfocused        #2f343f #2f343f #FFFFFF #2f343f
+#client.urgent           #2f343f #2f343f #ffffff #2f343f
+#client.placeholder      #2f343f #2f343f #ffffff #2f343f
 
 # Set colors from Xresources
 # Change 'color7' and 'color2' to whatever colors you want i3 to use 
 # from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
-#set_from_resource $fg i3wm.color7 #f0f0f0
-#set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
 
 # class                 border  backgr. text indicator child_border
-#client.focused          $fg     $fg     $fg  $fg       $fg
-#client.focused_inactive $bg     $bg     $fg  $bg       $bg
-#client.unfocused        $bg     $bg     $fg  $bg       $bg
-#client.urgent           $bg     $bg     $fg  $bg       $bg
-#client.placeholder      $bg     $bg     $fg  $bg       $bg
+client.focused          $fg     $fg     $fg  $fg       $fg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
 
-#client.background       $bg
+client.background       $bg
 
 # PROTIP: You can also dynamically set dmenu's colors this way:
 #bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
@@ -264,6 +264,8 @@ for_window [class="MPlayer"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="Blueman-manager"] floating enable 
 for_window [title="dosbox"] floating enable
+for_window [class="Nvidia-settings"] floating enable
+#for_window [class="cool-retro-term"] resize set 600 740
 
 # volume control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute
@@ -294,27 +296,22 @@ gaps outer 2
 #smart_borders on
 
 # shut down, restart and locking features
-bindsym $mod+Delete exec rofi-computer
+bindsym $mod+Delete exec --no-startup-id ~/.config/rofi/scripts/powermenu.sh
 bindsym $mod+shift+Delete exec betterlockscreen -l dimblur
 
 # screensetup
-#exec_always --no-startup-id xrandr --output DisplayPort-0 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DVI-D-0 --mode 1920x1200 --pos 1920x0 --rotate normal --output HDMI-A-0 --off
-#exec_always --no-startup-id xrandr --output DisplayPort-0  --mode 1920x1200 --output DVI-D-0 --mode 1920x1200 --right-of DisplayPort-0
-#fake-outputs 3840x1200+0+0
-
-# multi monitor support with the nVidia driver
-#force_xinerama yes
+exec_always --no-startup-id xrandr --output DisplayPort-0 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-0 --off --output DVI-1 --off
 
 # autostarted applications
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id nitrogen --restore; sleep 1;
+exec --no-startup-id setbg	
 #exec --no-startup-id feh --bg-scale ~/.Wallpaper.*
 exec --no-startup-id compton --config ~/.config/compton.conf -b
-exec --no-startup-id .config/conky/start_conky
+#exec --no-startup-id .config/conky/start_conky
 exec --no-startup-id xset dpms 500
 exec --no-startup-id xautolock -time 10 -locker "betterlockscreen -l dim"
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id mpd
 exec --no-startup-id setxkbmap se
-#exec_always --no-startup-id wal -R -n
+exec_always --no-startup-id wal -R -n
