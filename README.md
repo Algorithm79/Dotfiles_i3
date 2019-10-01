@@ -1,16 +1,18 @@
 # Dotfiles_i3
 
 ![screenshot](https://raw.githubusercontent.com/Algorithm79/Dotfiles_i3/master/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/Algorithm79/Dotfiles_i3/master/screenshot2.png)
 ## Essential stuff used in this config
 
 - [i3-gaps](https://github.com/Airblader/i3) (window manager) + [Polybar](https://github.com/polybar/polybar) (status bar)
-- [Font Awesome](https://github.com/FortAwesome/Font-Awesome) (Icons in Polybar) + [Iosevka](https://github.com/ryanoasis/nerd-fonts) (Part of Nerd-fonts)
+- [Font Awesome](https://github.com/FortAwesome/Font-Awesome) (Icons in Polybar) + [RobotoMono](https://github.com/google/fonts/tree/master/apache/robotomono) (Part of Nerd-fonts)
 - [Betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen)
-- [Rofi](https://github.com/davatorium/rofi) (window switcher, launcher etc)
-- [Conky](https://github.com/brndnmtthws/conky) (System monitor)
+- [Rofi](https://github.com/davatorium/rofi) (window switcher, launcher etc use rofi-git)
+- [Sardi-Mono](https://github.com/erikdubois/Sardi-Mono-Colora-Variations) (Icon theme used in Rofi)
 - [Compton](https://github.com/chjj/compton) (compositor)
-- [Nitrogen](https://github.com/l3ib/nitrogen) (Background browser and setter)
+- [Pywal](https://github.com/dylanaraps/pywal) (Set background and theme everything)
 - [Arc-theme](https://github.com/horst3180/arc-theme) (GTK Theme)
+- [rxvt-terminal](https://aur.archlinux.org/packages/rxvt-unicode-cvs-patched-wideglyphs/) (Patched version for wideglyphs)
 
-Terminals works and looks the same using
-rxvt-unicode or the classic xterm 
+Use the patched rxvt-unicode for best result
+chmod everything in the /scripts folder and put in /usr/bin or edit i3 config appropriately
