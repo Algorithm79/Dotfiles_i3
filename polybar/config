@@ -12,19 +12,14 @@
 
 ;********************************Colors**************************************
 
-[color]
+[colors]
 
-trans = #00000000
-white = #FFFFFF
-black = #000000
-
-bg = #2f343f
-fg = #f3f3f5
-fg-alt = #f3f3f5
-
-acolor = #5294e2
-curgent = #e53935
-coccupied = #43a047
+background = ${xrdb:color0:#222}
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
 
 
 ;*******************************Bar************************************
@@ -40,8 +35,8 @@ fixed-center = true
 line-size = 3
 enable-ipc = true
 
-background = ${color.bg}
-foreground = ${color.fg}
+background = ${colors.background}
+foreground = ${colors.foreground}
 
 border-size = 0
 border-color = ${xrdb:color0}
@@ -49,7 +44,7 @@ border-color = ${xrdb:color0}
 module-margin-left = 2
 module-margin-right = 2
 
-font-1 = Iosevka:style=Medium:size=10;1
+font-1 = Roboto Nerd Font:style=Regular:size=10;1
 font-0 = FontAwesome:fontformat=truetype:size=10;1
 font-3 = Font Awesome 5 Free:style=Regular:pixelsize=8;1
 font-4 = Font Awesome 5 Free:style=Solid:pixelsize=8;1
@@ -74,23 +69,23 @@ modules-right = mpd volume eth blue powermenu
 
 [module/rofi]
 type = custom/text
-content =  
+content =  
 ;alt-icon = 
 content-padding = 4
-content-background = ${color.acolor}
-content-foreground = ${color.fg}
-click-left = exec rofi -show drun
+content-background = ${colors.alert}
+content-foreground = ${colors.foreground}
+click-left = exec ~/.config/rofi/scripts/appsmenu.sh
 
 [module/blue]
 type = custom/text
 content = 
-content-foreground =  ${color.acolor}
+content-foreground =  ${colors.alert}
 click-left = exec blueman-manager &
 
 ;[module/nmeditor]
 ;type = custom/text
 ;content = 
-;content-foreground =  ${color.fg}
+;content-foreground =  ${foreground}
 ;click-left = exec nm-connection-editor &
 
 
@@ -100,14 +95,14 @@ pin-workspaces = true
 enable-click = true
 enable-scroll = true
 format-padding = 0
-content-foreground = ${color.bg}
+content-foreground = ${colors.background}
 content-padding = 6
 
-label-focused-underline = ${color.acolor}
-label-focused-foreground = ${color.fg-alt}
+label-focused-underline = ${colors.alert}
+label-focused-foreground = ${colors.foreground-alt}
 label-focused-padding = 4
 label-unfocused-padding = 4
-label-urgent-background = ${color.acolor}
+label-urgent-background = ${colors.background}
 label-urgent-padding = 4
 
 [module/filesystem]
@@ -118,9 +113,9 @@ mount-0 = /
 ;mount-2 = /invalid/mountpoint
 label-mounted =   %used%/%total%
 label-unmounted = %mountpoint%: not mounted
-label-unmounted-foreground = ${color.fg-alt}
-format-prefix-foreground = ${color.fg-alt}
-#format-underline = ${color.fg-alt}
+label-unmounted-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.foreground-alt}
+#format-underline = ${colors.foreground-alt}
 
 [module/xwindow]
 type = internal/xwindow
@@ -142,8 +137,8 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 label =  %gb_used%/%gb_total%
-format-prefix-foreground = ${color.fg-alt}
-#format-underline = ${color.fg-alt}
+format-prefix-foreground =${colors.foreground-alt}
+#format-underline = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
@@ -207,14 +202,14 @@ type = internal/network
 interface = enp5s0
 interval = 3.0
 ;format-connected-prefix = 
-;format-connected-prefix-foreground = ${color.fg}
+;format-connected-prefix-foreground = ${colors.foreground}
 label-connected = 
 format-disconnected = 
 
 [module/date]
 type = internal/date
 interval = 30
-content-foreground = ${color.acolor}
+content-foreground = ${colors.foreground}
 label =  %time%
 time =  %H:%M
 time-alt =  %Y-%m-%d
@@ -223,8 +218,8 @@ time-alt =  %Y-%m-%d
 type = custom/text
 content =  
 content-padding = 4
-content-background = ${color.acolor}
-content-foreground = ${color.fg}
-click-left = /usr/bin/rofi-computer
+content-background = ${colors.alert}
+content-foreground = ${colors.foreground}
+click-left = exec rofi -modi system:$HOME/.config/rofi/scripts/powermenu.sh -show system -theme themes/system-menu
 
 ;********************************************************************
