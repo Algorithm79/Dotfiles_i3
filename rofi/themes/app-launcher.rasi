@@ -15,18 +15,18 @@ background-color: transparent;
   spacing: 0;
   text:       #dfdfdf;
   text-alt:   #b2b2b2;
-  font: "Iosevka 14";
+  font: "Roboto Nerd Font";
   text-color: @text;
 }
 
 window {
-
+        background-color: rgba(0, 0, 0, 60%);
 	width: 100%;
 	height: 100%;
 	fullscreen: false;
 	position: center;
 	anchor: center;
-	font: "Iosevka 13";
+	font: "Roboto Nerd Font 13";
 }
 
 mainbox {

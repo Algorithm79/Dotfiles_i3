@@ -1,5 +1,4 @@
 configuration {
-  theme: "~/.cache/wal/colors-rofi-dark.rasi";
   show-icons:         true;
   icon-theme:         "Sardi-Mono";
   cycle:              true;
