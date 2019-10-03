@@ -296,7 +296,7 @@ gaps outer 2
 #smart_borders on
 
 # shut down, restart and locking features
-bindsym $mod+Delete exec --no-startup-id ~/.config/rofi/scripts/powermenu.sh
+bindsym $mod+Delete exec rofi -modi system:$HOME/.config/rofi/scripts/powermenu.sh -show system -theme themes/system-menu
 bindsym $mod+shift+Delete exec betterlockscreen -l dimblur
 
 # screensetup
