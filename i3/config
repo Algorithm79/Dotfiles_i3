@@ -37,7 +37,7 @@ font pango:Droid Sans 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec xterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -297,7 +297,7 @@ gaps outer 2
 
 # shut down, restart and locking features
 bindsym $mod+Delete exec rofi -modi system:$HOME/.config/rofi/scripts/powermenu.sh -show system -theme themes/system-menu
-bindsym $mod+shift+Delete exec betterlockscreen -l dimblur
+bindsym $mod+shift+Delete exec betterlockscreen -l
 
 # screensetup
 exec_always --no-startup-id xrandr --output DisplayPort-0 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-0 --off --output DVI-1 --off
@@ -310,7 +310,7 @@ exec --no-startup-id compton --config ~/.config/compton.conf -b
 #exec --no-startup-id .config/conky/start_conky
 exec --no-startup-id xset dpms 500
 exec --no-startup-id xautolock -time 10 -locker "betterlockscreen -l dim"
-exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
+exec --no-startup-id dunstwal
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id mpd
 exec --no-startup-id setxkbmap se
