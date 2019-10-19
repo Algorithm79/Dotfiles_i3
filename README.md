@@ -16,4 +16,5 @@
 - [rxvt-terminal](https://aur.archlinux.org/packages/rxvt-unicode-cvs-patched-wideglyphs/) (Patched version for wideglyphs)
 
 Use the patched rxvt-unicode for best result
+Need to have transset-df installed for Xterm transparancy to work
 chmod everything in the /scripts folder and put in /usr/bin or edit i3 config appropriately
