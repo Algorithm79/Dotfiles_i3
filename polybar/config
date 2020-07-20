@@ -1,225 +1,257 @@
-;****************************************************************************
-;* _______     ___   _____   ____  ____  ______        _       _______      *
-;* |_   __ \  .'   `.|_   _| |_  _||_  _||_   _ \      / \     |_   __ \    *
-;*   | |__) |/  .-.  \ | |     \ \  / /    | |_) |    / _ \      | |__) |   *
-;*   |  ___/ | |   | | | |   _  \ \/ /     |  __'.   / ___ \     |  __ /    *
-;*  _| |_    \  `-'  /_| |__/ | _|  |_    _| |__) |_/ /   \ \_  _| |  \ \_  *
-;* |_____|    `.___.'|________||______|  |_______/|____| |____||____| |___| *
-;*                                                                          *
-;*  Last Edited: 2019-05-29                                                 *
-;****************************************************************************
-
-
-;********************************Colors**************************************
+==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
 
 [colors]
 
-background = ${xrdb:color0:#222}
-foreground = ${xrdb:color7:#222}
-foreground-alt = ${xrdb:color7:#222}
-primary = ${xrdb:color1:#222}
-secondary = ${xrdb:color2:#222}
-alert = ${xrdb:color3:#222}
+background = ${xrdb:background:#000000}
+color1 = ${xrdb:color1:#ff5555}
+color2 = ${xrdb:color4:#ff5555}
+color3 = ${xrdb:color7:#ff5555}
 
+;***********************************Bar**********************************************
 
-;*******************************Bar************************************
-
-[bar/monitor1]
-monitor = ${env:MONITOR:}
+[bar/bar]
+enable-ipc=true
+height = 35
 width = 100%
-height = 27
-offset-x = 5%
-offset-y = 2%
 bottom = false
-fixed-center = true
-line-size = 3
-enable-ipc = true
 
 background = ${colors.background}
-foreground = ${colors.foreground}
+;background = ${colors.primary}
+foreground = ${colors.color1}
 
-border-size = 0
-border-color = ${xrdb:color0}
+line-size = 2
 
-module-margin-left = 2
-module-margin-right = 2
+font-1 = LirerationMono Nerd Font:size=11;1
+font-0 = FontAwesome:fontformat=truetype:size=11;1
+font-3 = Font Awesome 5 Free:style=Regular:pixelsize=11;1
+font-4 = Font Awesome 5 Free:style=Solid:pixelsize=11;1
+font-5 = Font Awesome 5 Brands:pixelsize=11;1
+font-2 = sm4tik:pixelsize=11;1
 
-font-1 = Roboto Nerd Font:style=Regular:size=10;1
-font-0 = FontAwesome:fontformat=truetype:size=10;1
-font-3 = Font Awesome 5 Free:style=Regular:pixelsize=8;1
-font-4 = Font Awesome 5 Free:style=Solid:pixelsize=8;1
-font-5 = Font Awesome 5 Brands:pixelsize=8;1
-font-2 = sm4tik:pixelsize=10;1
-
+modules-left = launcher i3 
+modules-center = xwindow
+modules-right = mpd time pulseaudio power
 cursor-click = pointer
 cursor-scroll = ns-resize
-
-;tray-position = right
-;tray-padding = 0
-;tray-maxsize = 16
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
-modules-left = rofi workspaces xwindow
-modules-center = date
-modules-right = mpd volume eth blue powermenu
- 
-;***************************Modules************************************
+wm-restack = i3
+override-redirect = false
 
-[module/rofi]
-type = custom/text
-content =  
-;alt-icon = 
-content-padding = 4
-content-background = ${colors.alert}
-content-foreground = ${colors.foreground}
+;**************************************Modules******************************************
+                                         
+[module/launcher]
+type=custom/text
+content = 
+content-font=5
+content-foreground=${colors.color3}
+content-padding=6
 click-left = exec rofi -theme themes/app-launcher -show drun
 
-[module/blue]
-type = custom/text
-content = 
-content-foreground =  ${colors.alert}
-click-left = exec blueman-manager &
+[module/xwindow]
+type = internal/xwindow
+label = [ %title:0:30:...% ]
+label-foreground = ${colors.color3}
+label-background = ${colors.background}
 
-;[module/nmeditor]
-;type = custom/text
-;content = 
-;content-foreground =  ${foreground}
-;click-left = exec nm-connection-editor &
-
-
-[module/workspaces]
+[module/i3]
 type = internal/i3
 pin-workspaces = true
 enable-click = true
 enable-scroll = true
 format-padding = 0
-content-foreground = ${colors.background}
+content-foreground = ${colors.color3}
 content-padding = 6
 
-label-focused-underline = ${colors.alert}
-label-focused-foreground = ${colors.foreground-alt}
+label-focused-underline = ${colors.background}
+label-focused-foreground = ${colors.color3}
 label-focused-padding = 4
 label-unfocused-padding = 4
 label-urgent-background = ${colors.background}
 label-urgent-padding = 4
 
-[module/filesystem]
-type = internal/fs
-interval = 25
-mount-0 = /
-;mount-1 = /home
-;mount-2 = /invalid/mountpoint
-label-mounted =   %used%/%total%
-label-unmounted = %mountpoint%: not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-format-prefix-foreground = ${colors.foreground-alt}
-#format-underline = ${colors.foreground-alt}
 
-[module/xwindow]
-type = internal/xwindow
-label = [ %title:0:30:...% ]
+[module/power]
+type = custom/text
+content = 
+content-foreground = ${colors.color3}
+click-left = exec rofi -modi system:$HOME/.config/rofi/scripts/powermenu.sh -show system -theme themes/system-menu
+
+content-padding = 2
 
 [module/mpd]
 type = internal/mpd
-;format-online = <toggle> <label-song> 
-format-online =  <label-song> 
+host = 127.0.0.1
+port = 6600
+format-online = <icon-prev> <toggle> <icon-next> <label-song> <label-time>
+format-online-padding = 2
+format-online-foreground = ${colors.color3}
+format-online-background = ${colors.background}
+label-song-foreground = ${colors.color3}
+label-song-background = ${colors.background}
+label-song-padding = 2
+label-time-foreground = ${colors.color3}
+label-time-background = ${colors.background}
+label-time-padding = 1
 
-icon-play = 
-icon-pause = 
+format-offline = <label-offline>
+label-offline =  offline
+format-offline-padding = 2
+format-offline-foreground = ${colors.color2}
+format-offline-background = ${colors.background}
 
-label-song-maxlen = 25
+bar-progress-width = 35
+bar-progress-indicator = |
+bar-progress-fill = ─
+bar-progress-empty = ─
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+;icon-prev = 
+;icon-stop = 
+;icon-play = 
+;icon-pause = 
+;icon-next = 
+
+label-song-maxlen = 75
 label-song-ellipsis = true
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-padding = 2
+format-foreground = ${colors.color3}
+label = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
-label =  %gb_used%/%gb_total%
-format-prefix-foreground =${colors.foreground-alt}
-#format-underline = ${colors.foreground-alt}
+format-padding = 2
+format-prefix = " "
+format-foreground = ${colors.color3}
+label = %percentage_used%%
 
-[module/battery]
-type = internal/battery
-battery = BAT1
-adapter = ACAD
-full-at = 98
-
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.background}
-
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${colors.background}
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground}
-format-full-underline = ${colors.background}
-
-ramp-capacity-0 = ""
-ramp-capacity-1 = ""
-ramp-capacity-2 = ""
-ramp-capacity-foreground = ${colors.foreground}
-
-animation-charging-0 = ""
-animation-charging-1 = ""
-animation-charging-2 = ""
-animation-charging-foreground = ${colors.foreground}
-animation-charging-framerate = 750
-
-[module/volume]
-type = internal/alsa
-;speaker-mixer = Speaker
-;headphone-mixer = Headphone
-;headphone-id = 16
-;mapped = true
-format-volume = <ramp-volume> <label-volume>
-label-volume = %percentage%%
-format-muted-prefix = " "
-label-muted = MUTE
-
-ramp-volume-0 =  
-ramp-volume-1 =  
-ramp-volume-2 =  
-ramp-volume-3 =  
-ramp-volume-4 =  
-ramp-volume-5 =  
-ramp-volume-6 =  
-
-[module/wireless-network]
+[module/wlan]
 type = internal/network
-interface = wlo1
+interface = wlx0013eff2094e
 interval = 3.0
-udspeed-minwidth = 0
-format-connected = <label-connected>
+
+format-connected =  <label-connected>
+label-connected = %essid%
+label-connected-color1 = ${colors.color1}
+
+;format-disconnected =
 format-disconnected = <label-disconnected>
-label-connected =  %essid%
-label-disconnected = 
-click-left = network &
+label-disconnected = %ifname% disconnected
+label-disconnected-color1 = ${colors.color1}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-color1 = ${colors.color1}
 
 [module/eth]
 type = internal/network
-interface = enp5s0
+interface = eno1
 interval = 3.0
-;format-connected-prefix = 
-;format-connected-prefix-foreground = ${colors.foreground}
-label-connected = 
-format-disconnected = 
 
-[module/date]
+format-connected-prefix = " "
+format-connected-prefix-color1 = ${colors.color1-alt}
+label-connected = %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-color1 = ${colors.color1-alt}
+
+[module/time]
 type = internal/date
-interval = 30
-content-foreground = ${colors.foreground}
-label =  %time%
-time =  %H:%M
-time-alt =  %Y-%m-%d
+interval = 10
+format-margin = 0
+
+time = "%H:%M"
+date = "%d %b"
+
+label =  %date%, %time%
+label-foreground = ${colors.color3}
+label-background = ${colors.background}
+label-padding = 2
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-margin = 1
+format-volume = <ramp-volume><label-volume>
+label-volume = %percentage:3:3%%
+format-volume-foreground = ${colors.color3}
+format-volume-background = ${colors.background}
+format-volume-padding = 2
+use-ui-max = false
+interval = 5
+
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
+
+
+label-muted = "MUTE"   
+label-muted-background = ${colors.background}
+label-muted-foreground = ${colors.color3}
+label-muted-padding = 2
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format =  <label>
+format-warn = <ramp> <label-warn>
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-color1 = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 
 [module/powermenu]
-type = custom/text
-content =  
-content-padding = 4
-content-background = ${colors.alert}
-content-foreground = ${colors.foreground}
-click-left = exec rofi -modi system:$HOME/.config/rofi/scripts/powermenu.sh -show system -theme themes/system-menu
+type = custom/menu
 
-;********************************************************************
+expand-right = true
+
+format-spacing = 1
+format-margin = 0
+format-background = ${colors.background}
+format-foreground = ${colors.color3}
+format-padding = 2
+
+label-open = 
+label-close = 
+label-separator = |          

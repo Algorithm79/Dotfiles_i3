@@ -1,4 +1,4 @@
-mpd_music_dir = "~/Filer/Musik"
+mpd_music_dir = "~/Musik"
 #song_list_format = " $5%l $1║{$7 %a $1│$2 %t$1 $R $3%b$1 }|{$6 %f $1}"
 #tag_editor_album_format = "{$4(%y)$9 }$7%b$9"
 browser_playlist_prefix = "$8playlist$9"
@@ -6,7 +6,7 @@ selected_item_prefix = "$0"
 selected_item_suffix = "$9"
 user_interface = "alternative"
 mpd_host = "127.0.0.1"
-#mpd_port = "6600"
+mpd_port = "6600"
 system_encoding = "utf-8"
 
 ####visualizer settings####
@@ -35,7 +35,9 @@ playlist_separate_albums = "no"
 playlist_display_mode = "columns" (classic/columns)
 browser_display_mode = "columns"
 volume_change_step = "2"
-progressbar_look = "─╼─"
+#progressbar_look = "─╼─"
+#progressbar_look = "─⊙ "
+progressbar_look = "▃▃▃"
 #user_interface = "alternative"
 data_fetching_delay = "yes"
 media_library_primary_tag = "artist"
@@ -55,4 +57,7 @@ ignore_leading_the = "no"
 mouse_support = "yes"
 #use_console_editor = "yes"
 autocenter_mode = "yes"
+
+execute_on_song_change = notify-send "Now Playing ♫" "$(mpc current)"
+
 

@@ -13,7 +13,7 @@
 # |  ,   /  \   \     .'           \   \ .'           '---'       |  |,'  |  ,   / |   :    : 
 #  ---`-'    `--`-,,-'              `---`                         `--'     ---`-'   \   \  /  
 #                                                                                   `--`-'   
-# i3 Config File 2019-10-01 
+# i3 Config File 2020-07-20
 
 set $mod Mod4
 
@@ -50,6 +50,15 @@ bindsym $mod+z exec rofi -theme themes/app-launcher -show drun
 
 # start rofi (window mode)
 bindsym $mod+Tab exec exec rofi -theme themes/app-launcher -show window
+
+# open empty container
+bindsym $mod+Shift+Return exec i3-msg open
+
+# quickstart applications
+bindsym $mod+w exec exec qutebrowser
+bindsym $mod+e exec exec thunderbird
+#bindsym $mod+f exec exec thunar
+
 
 # change focus
 bindsym $mod+j focus left
@@ -103,16 +112,16 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1:"
-set $workspace2 "2:"
-set $workspace3 "3:"
-set $workspace4 "4:"
-set $workspace5 "5:"
-set $workspace6 "6:"
-set $workspace7 "7:"
-set $workspace8 "8:"
-set $workspace9 "9:"
-set $workspace10 "10:"
+set $workspace1 ""
+set $workspace2 ""
+set $workspace3 ""
+set $workspace4 ""
+set $workspace5 ""
+set $workspace6 ""
+set $workspace7 ""
+set $workspace8 ""
+set $workspace9 ""
+set $workspace10 ""
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -264,13 +273,20 @@ for_window [class="MPlayer"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="Blueman-manager"] floating enable 
 for_window [title="dosbox"] floating enable
+for_window [title="Type Knight"] floating enable
 for_window [class="Nvidia-settings"] floating enable
+for_window [class="Solaar"] floating enable
 #for_window [class="cool-retro-term"] resize set 600 740
 
-# volume control
+# volume control alsa
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# Pulse Audio controls
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # media player controls
 bindsym XF86AudioPlay exec mpc toggle
@@ -300,18 +316,19 @@ bindsym $mod+Delete exec rofi -modi system:$HOME/.config/rofi/scripts/powermenu.
 bindsym $mod+shift+Delete exec betterlockscreen -l
 
 # screensetup
-exec_always --no-startup-id xrandr --output DisplayPort-0 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-0 --off --output DVI-1 --off
+#exec_always --no-startup-id xrandr --output DisplayPort-0 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-0 --off --output DVI-1 --off
 
 # autostarted applications
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+#exec_always --no-startup-id tint2
 exec --no-startup-id setbg	
 #exec --no-startup-id feh --bg-scale ~/.Wallpaper.*
-exec --no-startup-id compton --config ~/.config/compton.conf -b
-#exec --no-startup-id .config/conky/start_conky
+exec --no-startup-id picom
+exec --no-startup-id .config/conky/start_conky
 exec --no-startup-id xset dpms 500
 exec --no-startup-id xautolock -time 10 -locker "betterlockscreen -l dim"
 exec --no-startup-id dunstwal
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id mpd
-exec --no-startup-id setxkbmap se
+exec_always --no-startup-id setxkbmap se
 exec_always --no-startup-id wal -R -n
