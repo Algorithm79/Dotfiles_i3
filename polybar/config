@@ -37,7 +37,7 @@ foreground = ${colors.color1}
 
 line-size = 2
 
-font-1 = LirerationMono Nerd Font:size=11;1
+font-1 = LiterationMono Nerd Font:size=11;1
 font-0 = FontAwesome:fontformat=truetype:size=11;1
 font-3 = Font Awesome 5 Free:style=Regular:pixelsize=11;1
 font-4 = Font Awesome 5 Free:style=Solid:pixelsize=11;1
