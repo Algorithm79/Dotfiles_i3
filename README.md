@@ -8,7 +8,7 @@
 ## Essential stuff used in this config
 
 - [i3-gaps](https://github.com/Airblader/i3) (window manager) + [Polybar](https://github.com/polybar/polybar) (status bar)
-- [Font Awesome](https://github.com/FortAwesome/Font-Awesome) (Icons in Polybar) + [RobotoMono](https://github.com/google/fonts/tree/master/apache/robotomono) (Part of Nerd-fonts)
+- [Font Awesome](https://github.com/FortAwesome/Font-Awesome) (Icons in Polybar) + [LiterationMono Nerd Font] (Part of Nerd-fonts)
 - [Betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen)
 - [Rofi](https://github.com/davatorium/rofi) (window switcher, launcher etc use rofi-git)
 - [Dunst](https://github.com/dunst-project/dunst) (notification daemon)
