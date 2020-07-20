@@ -13,7 +13,7 @@
 - [Rofi](https://github.com/davatorium/rofi) (window switcher, launcher etc use rofi-git)
 - [Dunst](https://github.com/dunst-project/dunst) (notification daemon)
 - [Sardi-Mono](https://github.com/erikdubois/Sardi-Mono-Colora-Variations) (Icon theme used in Rofi)
-- [Picom](https://github.com/chjj/compton) (compositor)
+- [Picom](https://github.com/yshui/picom) (Compositor) 
 - [Pywal](https://github.com/dylanaraps/pywal) (Set background and theme everything)
 - [mojave-gtk-theme](https://github.com/vinceliuice/Mojave-gtk-theme) (GTK Theme)
 - [mojave-CT-icons](https://github.com/zayronxio/Mojave-CT) (Icon Theme used in GTK3 Apps)
