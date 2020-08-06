@@ -16,6 +16,11 @@
 - [Picom](https://github.com/yshui/picom) (Compositor) 
 - [Pywal](https://github.com/dylanaraps/pywal) (Set background and theme everything
 
+Optional
+
+- [Qutewal](https://github.com/jjzmajic/qutewal) (For pywal support in qutebrowser)
+
+
 Need to have transset-df installed for Xterm transparancy to work (Uncomment line 61 in .bashrc for transparancy)
 chmod everything in the /scripts folder and put in /usr/bin or edit i3 config appropriately
 window switcher, launcher etc use rofi-git
