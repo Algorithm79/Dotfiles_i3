@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Custom Rofi Script
+
+# Launch Rofi
+rofi -no-lazy-grab -show drun \
+-display-drun "Applications :" -drun-display-format "{name}" \
+-hide-scrollbar true \
+-bw 0 \
+-lines 10 \
+-line-padding 10 \
+-padding 20 \
+-width 30 \
+-xoffset 10 -yoffset 40 \
+-location 1 \
+-columns 2 \
+-show-icons -icon-theme "Sardi-Mono" \
+-font "mononoki Nerd Font 12" \
+-color-enabled true \
+-color-window "$BACKGROUND,$BORDER,$SEPARATOR" \
+-color-normal "$BACKGROUND_ALT,$FOREGROUND,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
+-color-active "$BACKGROUND,$MAGENTA,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
+-color-urgent "$BACKGROUND,$YELLOW,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND"
+
+# More Options
+# -fullscreen \
+
+# Theming help
+# color window = background, border, separator
+# color normal = background, foreground, background-alt, highlight-background, highlight-foreground
+# color active = background, foreground, background-alt, highlight-background, highlight-foreground
+# color urgent = background, foreground, background-alt, highlight-background, highlight-foreground
