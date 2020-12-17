@@ -1,0 +1,83 @@
+# Window Customization
+window:
+  dimensions:
+    columns: 120
+    lines: 35
+  padding:
+    x: 25
+    y: 25
+scrolling:
+  history: 10000
+  multiplier: 3
+background_opacity: 0.9
+window.dynamic_title: true
+
+# Font Customization
+font:
+  normal:
+    family: mononoki Nerd Font
+    style: Regular
+  bold:
+    family: mononoki Nerd Font
+    style: Bold
+  italic:
+    family: mononoki Nerd Font
+    style: Italic
+  size: 11
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+  use_thin_strokes: false
+  debug:
+    persistent_logging: false
+draw_bold_text_with_bright_colors: true
+
+# Colros (Base 16 Default Dark)
+colors:
+  # Default colors
+  primary:
+    background: '0x181818'
+    foreground: '0xd8d8d8'
+
+  # Normal colors
+  normal:
+    black:   '0x181818'
+    red:     '0xab4642'
+    green:   '0xa1b56c'
+    yellow:  '0xf7ca88'
+    blue:    '0x7cafc2'
+    magenta: '0xba8baf'
+    cyan:    '0x86c1b9'
+    white:   '0xd8d8d8'
+
+  # Bright colors
+  bright:
+    black:   '0x585858'
+    red:     '0xab4642'
+    green:   '0xa1b56c'
+    yellow:  '0xf7ca88'
+    blue:    '0x7cafc2'
+    magenta: '0xba8baf'
+    cyan:    '0x86c1b9'
+    white:   '0xf8f8f8'
+
+  indexed_colors:
+    - { index: 16, color: '0xdc9656' }
+    - { index: 17, color: '0xa16946' }
+    - { index: 18, color: '0x282828' }
+    - { index: 19, color: '0x383838' }
+    - { index: 20, color: '0xb8b8b8' }
+    - { index: 21, color: '0xe8e8e8' }
+
+  selection:
+    text: '0xffffff'
+    background: '0xdc3232'
+    white:   '0xffffff'
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
