@@ -17,6 +17,7 @@
 - [Pywal](https://github.com/dylanaraps/pywal) (Set background and theme everything)
 - [xwallpaper](https://github.com/stoeckmann/xwallpaper) (Needed to use script to set wallpaper from Ranger)
 - [Starship](https://starship.rs/) (Cross-Shell Prompt)
+- [GTK-Colorizer](https://github.com/osiset/gtk-colorizer) (Generate GTK theme from pywal)
 
 Optional
 
