@@ -8,6 +8,7 @@
 ## Essential stuff used in this config
 
 - [i3-gaps](https://github.com/Airblader/i3) (window manager) + [Polybar](https://github.com/polybar/polybar) (status bar)
+- [Alacritty](https://github.com/alacritty/alacritty) (Terminal)
 - [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) (FontAwesome Icons in Polybar) + (mononoki Nerd Font)
 - [Betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen)
 - [Rofi](https://github.com/davatorium/rofi) (window switcher, launcher etc use rofi-git)
