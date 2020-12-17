@@ -24,6 +24,12 @@ Optional
 - [Qutewal](https://github.com/jjzmajic/qutewal) (For pywal support in qutebrowser)
 
 
+Other
+
+- [Video](https://www.youtube.com/watch?v=gLNma-6AHPM) (Dotfiles in action)
+
+Note that these configuration files are for the runit version of Artix Linux, they should work on any disto with a few tweaks for systemd
+
 Need to have transset-df installed for Xterm transparancy to work (Uncomment line 61 in .bashrc for transparancy)
 chmod everything in the /scripts folder and put in /usr/bin or edit i3 config appropriately
 window switcher, launcher etc use rofi-git
