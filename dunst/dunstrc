@@ -1,17 +1,18 @@
 [global]
     monitor = 0
-    follow = keyboard
+    follow = mouse
 #    geometry = "300x50-20+48"
 geometry = "300x50-25-25"
     indicate_hidden = yes
-    shrink = yes
-    transparency = 20
+    shrink = no
+    transparency = 0
     notification_height = 0
     separator_height = 2
     padding = 8
     horizontal_padding = 8
-    frame_width = 1
-    frame_color = "#B43F41"
+    frame_width = 3
+    corner_radius = 5
+    frame_color = "#346091"
 
     # Define a color for the separator.
     # possible values are:
@@ -25,7 +26,7 @@ geometry = "300x50-25-25"
     sort = yes
 
     idle_threshold = 120
-    font = RobotoMono 10
+    font = mononoki Nerd Font 11
     line_height = 0
     markup = full
 
@@ -51,7 +52,7 @@ geometry = "300x50-25-25"
     show_indicators = yes
     icon_position = left
     max_icon_size = 40
-    #icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/Adwaita/256x256/status/
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/Adwaita/256x256/status/
     sticky_history = yes
     history_length = 20
     dmenu = /usr/bin/dmenu -p dunst:
@@ -76,23 +77,25 @@ geometry = "300x50-25-25"
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#0b0a0a"
-    foreground = "#B43F41"
+    background = "#090a0c"
+    foreground = "#346091"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
+    icon = /home/magnus/.config/dunst/normal.png
 
 [urgency_normal]
-    background = "#0b0a0a"
-    foreground = "#B43F41"
+    background = "#090a0c"
+    foreground = "#346091"
     timeout = 5
+    icon = /home/magnus/.config/dunst/normal.png
 
 [urgency_critical]
-    background = "#0b0a0a"
-    foreground = "#B43F41"
-    frame_color = "#B43F41"
+    background = "#090a0c"
+    foreground = "#346091"
+    frame_color = "#346091"
     timeout = 0
-
+    icon = /home/magnus/.config/dunst/normal.png
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
 # Messages can be matched by "appname", "summary", "body", "icon", "category",
