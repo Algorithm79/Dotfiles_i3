@@ -6,8 +6,8 @@
 #██║██████╔╝    ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
 #╚═╝╚═════╝      ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ 
 #
-# i3 Config 2020-08-04
-#                                                             
+# i3 Config 2021-01-13
+#                         
 
 set $mod Mod4
 
@@ -40,10 +40,10 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmen.sh
 
 # start rofi (dmenu mode)
-bindsym $mod+z exec rofi -theme themes/app-launcher -show drun
+bindsym $mod+z exec $HOME/.config/rofi/scripts/appsmenu.sh
 
 # start rofi (window mode)
-bindsym $mod+Tab exec exec rofi -theme themes/app-launcher -show window
+bindsym $mod+Tab exec exec rofi -theme themes/appsmenu -show window
 
 # open empty container
 bindsym $mod+Shift+Return exec i3-msg open
@@ -106,7 +106,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 ""
+set $workspace1 ""
 set $workspace2 ""
 set $workspace3 ""
 set $workspace4 ""
@@ -272,6 +272,9 @@ for_window [class="Nvidia-settings"] floating enable
 for_window [class="Solaar"] floating enable
 for_window [class="Gnome-multi-writer"] floating enable
 for_window [class="multibootusb"] floating enable
+for_window [class="Org.gnome.Weather"] floating enable
+for_window [class="Gnome-calendar"] floating enable 
+for_window [class="Gnome-calculator"] floating enable
 #for_window [class="Connman-gtk"] floating enable
 #for_window [class="qutebrowser"] floating enable
 #for_window [class="cool-retro-term"] resize set 600 740
@@ -329,16 +332,15 @@ bindsym $mod+shift+Delete exec betterlockscreen -l
 
 # autostarted applications
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id connman-gtk
 exec --no-startup-id setbg	
-#exec --no-startup-id feh --bg-scale ~/.Wallpaper.*
+exec --no-startup-id ~/.fehbg
 exec_always --no-startup-id picom --experimental-backends
 #exec --no-startup id picom -b
 #exec --no-startup-id .config/conky/start_conky
 exec --no-startup-id xset dpms 500
 exec --no-startup-id xautolock -time 10 -locker "betterlockscreen -l dim"
 exec --no-startup-id dunstwal
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 exec --no-startup-id mpd
 exec_always --no-startup-id setxkbmap se
 exec_always --no-startup-id wal -R -n

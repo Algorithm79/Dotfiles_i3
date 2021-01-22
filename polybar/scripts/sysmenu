@@ -55,9 +55,9 @@ MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -i -p 'System :' \
 case "$MENU" in
   *Lock) betterlockscreen -l ;;
   *Logout) i3-msg exit ;;
-  *Reboot) loginctl reboot ;;
-  *Suspend) loginctl suspend ;;
-  *Shutdown) loginctl poweroff
+  *Reboot) systemctl reboot ;;
+  *Suspend) systemctl suspend ;;
+  *Shutdown) systemctl poweroff
 esac
 
 # More Options

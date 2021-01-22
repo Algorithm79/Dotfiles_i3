@@ -1,10 +1,6 @@
+/** Basic config file **/
+
 configuration {
   show-icons:         true;
-  icon-theme:         "Sardi-Mono";
-  cycle:              true;
-  hide-scrollbar:     true;
-  disable-history:    false;
-  modi:               "drun";
-  display-drun:       "apps";
-  columns: 2;
+  icon-theme:         "Qogir";
 }

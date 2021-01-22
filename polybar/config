@@ -78,13 +78,14 @@ override-redirect = false
 [module/activity]
 type = custom/text
 
-content = 
+;content = 
+content = 
 ;;content-background = ${colors.background}
 content-foreground = ${colors.color3}
 content-padding = 1
 
-click-left = ~/.config/polybar/scripts/menu
-click-right = ~/.config/polybar/scripts/menu
+click-left = exec $HOME/.config/rofi/bin/launcher_misc
+click-right = exec $HOME/.config/rofi/bin/launcher_misc
 
 [module/sysmenu]
 type = custom/text
@@ -94,8 +95,9 @@ content = 
 content-foreground = ${colors.color3}
 content-padding = 1
 
-click-left = ~/.config/polybar/scripts/sysmenu
-click-right = ~/.config/polybar/scripts/sysmenu
+click-left = exec rofi -modi system:$HOME/.config/rofi/scripts/powermenu.sh -show system -theme themes/system-menu
+click-right = exec rofi -modi system:$HOME/.config/rofi/scripts/powermenu.sh -show system -theme themes/system-menu
+
 
 [module/xwindow]
 type = internal/xwindow
@@ -170,8 +172,8 @@ ramp-volume-3 = 
 [module/date]
 type = internal/date
 interval = 1.0
-time = %a   %H:%M
-time-alt = %B %d, %Y
+time = %H:%M
+time-alt = %a %B %d, %Y
 label-foreground = ${colors.color3}
 label-background = ${colors.background}
 format = <label>

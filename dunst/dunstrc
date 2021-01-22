@@ -12,7 +12,7 @@ geometry = "300x50-25-25"
     horizontal_padding = 8
     frame_width = 3
     corner_radius = 5
-    frame_color = "#346091"
+    frame_color = "#3848A0"
 
     # Define a color for the separator.
     # possible values are:
@@ -77,23 +77,23 @@ geometry = "300x50-25-25"
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#090a0c"
-    foreground = "#346091"
+    background = "#0C0B18"
+    foreground = "#3848A0"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
     icon = /home/magnus/.config/dunst/normal.png
 
 [urgency_normal]
-    background = "#090a0c"
-    foreground = "#346091"
+    background = "#0C0B18"
+    foreground = "#3848A0"
     timeout = 5
     icon = /home/magnus/.config/dunst/normal.png
 
 [urgency_critical]
-    background = "#090a0c"
-    foreground = "#346091"
-    frame_color = "#346091"
+    background = "#0C0B18"
+    foreground = "#3848A0"
+    frame_color = "#3848A0"
     timeout = 0
     icon = /home/magnus/.config/dunst/normal.png
 # Every section that isn't one of the above is interpreted as a rules to
