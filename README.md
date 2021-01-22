@@ -13,10 +13,11 @@
 - [Betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen)
 - [Rofi](https://github.com/davatorium/rofi) (window switcher, launcher etc use rofi-git)
 - [Dunst](https://github.com/dunst-project/dunst) (notification daemon)
-- [Sardi-Mono](https://github.com/erikdubois/Sardi-Mono-Colora-Variations) (Icon theme used in Rofi)
-- [Picom](https://github.com/jonaburg/picom) (Compositorlkd jonaburg fork, sho) 
+- [Qogir-icons](https://github.com/vinceliuice/Qogir-icon-theme) (Icon theme used in Rofi)
+- [Infinity-Dark-icons](https://www.gnome-look.org/p/1436570/) (Icon theme used in GTK apps)
+- [Picom](https://github.com/yshui/picom) (Compositor) 
 - [Pywal](https://github.com/dylanaraps/pywal) (Set background and theme everything)
-- [xwallpaper](https://github.com/stoeckmann/xwallpaper) (Needed to use script to set wallpaper from Ranger)
+- [Feh](https://github.com/derf/feh) (Needed to use script to set wallpaper from Ranger)
 - [Starship](https://starship.rs/) (Cross-Shell Prompt)
 - [GTK-Colorizer](https://github.com/osiset/gtk-colorizer) (Generate GTK theme from pywal)
 
@@ -29,8 +30,4 @@ Other
 
 - [Video](https://www.youtube.com/watch?v=gLNma-6AHPM) (Dotfiles in action)
 
-Note that these configuration files are for the runit version of Artix Linux, they should work on any disto with a few tweaks for systemd
-
-Need to have transset-df installed for Xterm transparancy to work (Uncomment line 61 in .bashrc for transparancy)
-chmod everything in the /scripts folder and put in /usr/bin or edit i3 config appropriately
-window switcher, launcher etc use rofi-git
+All applications used in this config should be available in most major distros standard repos.
