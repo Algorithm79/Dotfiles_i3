@@ -1,3 +1,0 @@
-inotify-simple==1.1.8
-psutil==5.5.1
-python-prctl==1.7
