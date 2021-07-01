@@ -8,7 +8,7 @@
 
 - [i3-gaps](https://github.com/Airblader/i3) (window manager) + [Polybar](https://github.com/polybar/polybar) (status bar)
 - [Kitty](https://github.com/kovidgoyal/kitty) (Terminal)
-- [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) (FontAwesome Icons in Polybar) + (mononoki Nerd Font)
+- [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) (FontAwesome Icons in Polybar) + (RobotoMono Nerd Font)
 - [Betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen)
 - [Rofi](https://github.com/davatorium/rofi) (window switcher, launcher etc use rofi-git)
 - [Dunst](https://github.com/dunst-project/dunst) (notification daemon)
