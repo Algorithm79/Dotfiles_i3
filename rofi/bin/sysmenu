@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# Custom Rofi Script
+
+BORDER="#171a1f"
+SEPARATOR="#20242a"
+FOREGROUND="#FFF"
+BACKGROUND="#171a1f"
+BACKGROUND_ALT="#171a1f"
+HIGHLIGHT_BACKGROUND="#20242a"
+HIGHLIGHT_FOREGROUND="#FFF"
+
+BLACK="#000000"
+WHITE="#ffffff"
+RED="#e53935"
+GREEN="#43a047"
+YELLOW="#fdd835"
+BLUE="#1e88e5"
+MAGENTA="#00897b"
+CYAN="#00acc1"
+PINK="#d81b60"
+PURPLE="#8e24aa"
+INDIGO="#3949ab"
+TEAL="#00897b"
+LIME="#c0ca33"
+AMBER="#ffb300"
+ORANGE="#fb8c00"
+BROWN="#6d4c41"
+GREY="#757575"
+BLUE_GREY="#546e7a"
+DEEP_PURPLE="#5e35b1"
+DEEP_ORANGE="#f4511e"
+LIGHT_BLUE="#039be5"
+LIGHT_GREEN="#7cb342"
+
+theme="slingshotsys"
+dir="$HOME/.config/rofi/launchers/misc"
+
+
+# Launch Rofi
+MENU="$(rofi -no-lazy-grab -theme $dir/"$theme" -sep "|" -dmenu -i -p 'System' \
+-hide-scrollbar true \
+-bw 0 \
+-lines 5 \
+-line-padding 10 \
+-padding 20 \
+-width 15 \
+-xoffset -27 -yoffset 60 \
+-location 3 \
+-columns 1 \
+-show-icons -icon-theme "We10X" \
+-font "mononoki Nerd Font 12" \
+-color-enabled true \
+-color-window "$BACKGROUND,$BORDER,$SEPARATOR" \
+-color-normal "$BACKGROUND_ALT,$FOREGROUND,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
+-color-active "$BACKGROUND,$MAGENTA,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
+-color-urgent "$BACKGROUND,$YELLOW,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
+<<< "  Lock|  Logout|  Reboot|  Suspend|  Shutdown")"
+case "$MENU" in
+  *Lock) betterlockscreen -l ;;
+  *Logout) i3-msg exit ;;
+  *Reboot) systemctl reboot ;;
+  *Suspend) systemctl suspend ;;
+  *Shutdown) systemctl -i poweroff
+esac
+
+# More Options
+# -fullscreen \
+
+# Theming help
+# color window = background, border, separator
+# color normal = background, foreground, background-alt, highlight-background, highlight-foreground
+# color active = background, foreground, background-alt, highlight-background, highlight-foreground
+# color urgent = background, foreground, background-alt, highlight-background, highlight-foreground
