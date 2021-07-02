@@ -14,9 +14,10 @@
 - [Dunst](https://github.com/dunst-project/dunst) (notification daemon)
 - [Qogir-icons](https://github.com/vinceliuice/Qogir-icon-theme) (Icon theme used in Rofi)
 - [Papirus Nord](https://github.com/Adapta-Projects/Papirus-Nord) (Icon theme used in GTK apps)
-- [Nordic Theme](https://www.gnome-look.org/p/1267246/) (GTK Theme)
+- [Nordic Theme](https://www.gnome-look.org/p/1267246/) (Nordic GTK Theme)
+- [Dracula Theme](https://github.com/dracula/gtk) (Dracula GTK Theme)
 - [Picom](https://github.com/yshui/picom) (Compositor) 
-- [Pywal](https://github.com/dylanaraps/pywal) (Set background and theme everything using Base16-Nord color theme)
+- [Pywal](https://github.com/dylanaraps/pywal) (Set background and theme everything using Base16-Nord color theme or Base16-Dracula)
 - [Feh](https://github.com/derf/feh) (Needed to use script to set wallpaper from Ranger)
 - [Starship](https://starship.rs/) (Cross-Shell Prompt)
 
