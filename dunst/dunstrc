@@ -13,8 +13,8 @@
     notification_height =           0
     padding =                       25
     horizontal_padding =            25
-    frame_width =                   1
-    frame_color = "#EBCB8B"
+    frame_width =                   2
+    frame_color = "#62d6e8"
     separator_height =              2
     separator_color =               #916a9d
     sort = yes
@@ -24,10 +24,10 @@
 #           Text
 #--------------------------
 
-    font =                          mononoki Nerd Font 9
+    font =                          RobotoMono Nerd Font 9
     line_height =                   17
     markup =                        full
-    format =                        "<span font_desc='mononoki Nerd Font 11' weight='bold' foreground='#916a9d'>%s</span>\n%b"
+    format =                        "<span font_desc='RobotoMono Nerd Font 11' weight='bold' foreground='#916a9d'>%s</span>\n%b"
     alignment = center
     vertical_alignment =            center
     show_age_threshold =            60
@@ -35,7 +35,7 @@
 
     ignore_newline =                no
     stack_duplicates =              true
-    hide_duplicate_count =          false
+    hide_duplicate_count =          true
     show_indicators =               no
 
 #--------------------------
@@ -44,9 +44,7 @@
     icon_position =                 left
     min_icon_size =                 48
     max_icon_size =                 96
-    
-    # Zafiro
-     icon_path =                    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/Adwaita/256x256/status/
+    icon_path =                    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/Adwaita/256x256/status/
 #--------------------------
 #           History
 #--------------------------
@@ -94,27 +92,30 @@
         context =                   ctrl+shift+period
 
     [urgency_low]
-        background = "#2E3440"
-        foreground = "#EBCB8B"
+        background = "#282936"
+        foreground = "#62d6e8"
         highlight =                 "#87A5BF"
         timeout =                   8
+        icon = $HOME/.config/dunst/normal.png
 
     [urgency_normal]
-        background = "#2E3440"
-        foreground = "#EBCB8B"
+        background = "#282936"
+        foreground = "#62d6e8"
         highlight =                 "#87A5BF"
         timeout =                   8
+        icon = $HOME/.config/dunst/normal.png
 
     [urgency_critical]
-        background = "#2E3440"
-        foreground = "#EBCB8B"
+        background = "#282936"
+        foreground = "#62d6e8"
         highlight =                 "#87A5BF"
         timeout =                   8
+        icon = $HOME/.config/dunst/normal.png
 
 # Modify spectacle screenshot notification to show only the summary
     [Spectacle]
         appname =                   Spectacle
-        format =                    "<span font_desc='mononoki Nerd Font 11' weight='bold' foreground='#916a9d'>%s</span>"
+        format =                    "<span font_desc='RobotoMono Nerd Font 11' weight='bold' foreground='#916a9d'>%s</span>"
 
 
 # vim: ft=cfg
