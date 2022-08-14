@@ -1,5 +1,4 @@
 # Dotfiles_i3
-Nord Theme
 
 ![screenshot](https://raw.githubusercontent.com/Algorithm79/Dotfiles_i3/master/screenshot.png)
 ![screenshot](https://raw.githubusercontent.com/Algorithm79/Dotfiles_i3/master/screenshot1.png)
