@@ -205,7 +205,6 @@ alias myip="curl http://ipecho.net/plain; echo"
 alias logs="find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 alias folders='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
 alias grep='grep --color=auto'
-alias etherium='lolminer --algo ETCHASH --pool eu1-etc.ethermine.org:4444 --user 0xb62c7057C7a6D6475293aC3c784221E39d7B304E --keepfree 0'
 alias orphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias trim='sudo fstrim / -v'
 alias kube='ckube -H 4.0 -m 0,1'
