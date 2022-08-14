@@ -295,7 +295,6 @@ gaps outer 6
 
 # shut down, restart and locking features
 bindsym $mod+Delete exec clearine
-bindsym $mod+shift+Delete exec betterlockscreen -l dimblur
 
 # autostarted applications
 exec --no-startup-id autotiling
@@ -304,7 +303,6 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id ~/.fehbg
 exec_always --no-startup-id picom --experimental-backends
 exec --no-startup-id xset dpms 500
-exec --no-startup-id xautolock -time 10 -locker "betterlockscreen -l dimblur"
 exec --no-startup-id dunst
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id mpd
