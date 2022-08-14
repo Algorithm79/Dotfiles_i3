@@ -7,7 +7,8 @@
 
 ## Essential stuff used in this config
 
-- [i3-gaps](https://github.com/Airblader/i3) (window manager) + [Polybar](https://github.com/polybar/polybar) (status bar)
+- [i3-gaps](https://github.com/Airblader/i3) (window manager)
+- [Polybar](https://github.com/polybar/polybar) (status bar)
 - [Autotiling](https://github.com/nwg-piotr/autotiling) (Autotiler for i3)
 - [Kitty](https://github.com/kovidgoyal/kitty) (Terminal)
 - [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) (FontAwesome Icons in Polybar) + (Hack Nerd Font)
