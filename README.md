@@ -12,6 +12,7 @@
 - [Kitty](https://github.com/kovidgoyal/kitty) (Terminal)
 - [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) (FontAwesome Icons in Polybar) + (Hack Nerd Font)
 - [Clearine](https://github.com/okitavera/clearine) (X11 Logout UI)
+- [Betterlockscreen](https://github.com/betterlockscreen/betterlockscreen) (Lockscreen)
 - [Rofi](https://github.com/davatorium/rofi) (window switcher, launcher etc use rofi-git)
 - [Dunst](https://github.com/dunst-project/dunst) (notification daemon)
 - [Qogir-icons](https://github.com/vinceliuice/Qogir-icon-theme) (Icon theme used in Rofi)
