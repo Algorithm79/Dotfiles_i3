@@ -2,7 +2,7 @@
 #!/bin/sh
 
 # SETTINGS
-music_library="$HOME/Music"
+music_library="/home/magnus/Musik"
 fallback_image="$HOME/.config/ncmpcpp/fallback.png"
 padding_top=0
 padding_bottom=0

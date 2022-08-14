@@ -1,7 +1,19 @@
+
+#███╗   ██╗ ██████╗███╗   ███╗██████╗  ██████╗██████╗ ██████╗ 
+#████╗  ██║██╔════╝████╗ ████║██╔══██╗██╔════╝██╔══██╗██╔══██╗
+#██╔██╗ ██║██║     ██╔████╔██║██████╔╝██║     ██████╔╝██████╔╝
+#██║╚██╗██║██║     ██║╚██╔╝██║██╔═══╝ ██║     ██╔═══╝ ██╔═══╝ 
+#██║ ╚████║╚██████╗██║ ╚═╝ ██║██║     ╚██████╗██║     ██║     
+#╚═╝  ╚═══╝ ╚═════╝╚═╝     ╚═╝╚═╝      ╚═════╝╚═╝     ╚═╝     
+#
+#2021-08-14
+#
+                                                             
+
 mpd_music_dir = "~/Musik"
 #song_list_format = " $5%l $1║{$7 %a $1│$2 %t$1 $R $3%b$1 }|{$6 %f $1}"
 #tag_editor_album_format = "{$4(%y)$9 }$7%b$9"
-browser_playlist_prefix = "$8playlist$9"
+#browser_playlist_prefix = "$8playlist$9"
 selected_item_prefix = "$0"
 selected_item_suffix = "$9"
 user_interface = "alternative"
@@ -10,9 +22,9 @@ mpd_port = "6600"
 system_encoding = "utf-8"
 
 ####visualizer settings####
-visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_data_source = "/tmp/mpd.fifo"
 visualizer_output_name = "visualizer"
-visualizer_sync_interval = "20"
+#visualizer_sync_interval = "20"
 visualizer_type = "spectrum"
 visualizer_color ="yellow"
 visualizer_look = "º|"

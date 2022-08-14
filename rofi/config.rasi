@@ -1,0 +1,127 @@
+configuration{
+    modi: "run,drun,window";
+    lines: 5;
+    font: "Hack Nerd Font 12";
+    show-icons: true;
+    icon-theme: "Oranchelo";
+    terminal: "kitty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    display-window: " 﩯  window";
+    display-Network: " 󰤨  Network";
+    sidebar-mode: true;
+}
+
+@theme "catppuccin"
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    width: 30%;
+    height: 50%;
+    border: 0;
+    border-radius: 4px;
+    padding: 30;
+    border-color: @border-col;
+    background-color: @bg-col;
+}
+
+mainbox {
+    background-color: @bg-col;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @bg-col;
+	expand:                         false;
+	border-radius:                  0px 0 8px 8px;
+	padding:                        10px 30px 30px 10px;
+}
+
+prompt {
+    background-color: @blue;
+    padding: 6px;
+    text-color: @bg-col;
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
+  font: "Hack Nerd Font 16";
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @fg-col;
+    background-color: @bg-col;
+  font: "Hack Nerd Font 16";
+}
+
+listview {
+  columns: 3;
+  lines:   3;
+  padding: 8;
+  spacing: 0;
+  cycle:   false;
+  dynamic: true;
+  layout:  vertical;
+    background-color: @bg-col;
+}
+
+element {
+  border: 2;
+  orientation: vertical;
+  padding: 15 15 15 15;
+  border-radius: 6;
+    background-color: @bg-col;
+    text-color: @fg-col  ;
+}
+
+element-text {
+	expand:                         true;
+	vertical-align:                 0.5;
+	horizontal-align:		0.5;
+	margin:                         0.3% 0.3% 0.3% 0.3%;
+	background-color: 		inherit;
+	text-color:       		inherit;
+}
+
+element-icon {
+  size: 50;
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+}
+
+element selected {
+  background-color: @ac;
+  border-color: @blue;
+    text-color: @fg-col  ;
+  transition: 20;
+}
+
+mode-switcher {
+    spacing: 0;
+  }
+
+button {
+    padding: 10px;
+    background-color: @bg-col-light;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: @bg-col;
+  text-color: @blue;
+}

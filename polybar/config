@@ -1,0 +1,360 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+bg = #1E1E2E
+no-bg = #1E1E2E
+;bg = #af03121c
+;no-bg = #00000000
+; pywal generated, manually modified
+black		= #03121c
+black-alt	= #a19c9f
+red		= #386685
+green		= #ABE9B3
+yellow		= #FAE3B0
+blue		= #7aa2f7
+magenta		= #c38ac3
+cyan		= #8ee8c4
+white		= #D9E0EE
+pink		= #F5C2E7
+
+[constants/background]
+override-redirect = false
+height = 40
+fixed-center = true
+padding = 4
+
+
+font-0 = Hack Nerd Font:style=Bold:pixelsize=12;1
+font-1 = Iosevka Custom:fontformat=truetype:size=9
+font-2 = siji:pixelsize=10;1
+font-3 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-4 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
+font-5 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+font-6 = "Font Awesome 5 Free:pixelsize=10;1"
+font-7 = "SourceHanSansJP-Normal:pixelsize=10;1"
+
+wm-restack = i3
+
+[bar/top]
+locale = sv_SE.UTF-8
+inherit = constants/background
+width = 100%
+module-margin-left    = 1
+module-margin-right   = 0
+padding-left          = 2
+padding-right         = 2
+enable-ipc	      = true
+
+background = ${colors.no-bg}
+foreground = ${colors.white}
+
+modules-left = appsmenu firefox steam discord spotify files email xwindow
+modules-center = i3
+modules-right = cpu memory filesystem wlan pulseaudio separator date powermenu
+
+[module/xwindow]
+format-foreground = ${colors.blue}
+format-padding = 2
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+enable-click = true
+enable-scroll = true
+wrapping-scroll = true
+reverse-scroll = false
+fuzzy-match = true
+
+ws-icon-default = 
+
+format = <label-state> <label-mode>
+
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = #e85d00
+
+label-focused = 
+label-focused-foreground = ${colors.blue}
+label-focused-background = ${colors.background}
+label-focused-padding = 2
+
+label-unfocused = 
+label-unfocused-padding = 2
+label-unfocused-foreground = ${colors.blue}
+label-unfocused-background = ${colors.background}
+
+label-visible = %icon%
+label-visible-underline = #555555
+label-visible-padding = 2
+
+label-urgent = 
+label-urgent-foreground = ${colors.red}
+label-urgent-background = ${colors.background}
+label-urgent-padding = 2 
+
+[module/date]
+date                        = %D
+
+format                      = <label>
+interval                    = 1.0
+label                       = %{A6:time-admin:}%time% %{A}
+format-prefix               = %{T1} %{T-}
+format-prefix-foreground    = ${colors.blue}
+format-background           = ${color.background}
+format-foreground           = ${color.foreground}
+time                        = %H:%M
+time-alt                    = %A, %B %e  %H:%M:%S %p
+
+type                        = internal/date
+
+[module/battery]
+adapter                                 = ADP1
+battery                                 = BAT0
+
+format-charging                         = <label-charging>
+format-charging-foreground              = #ffffff
+
+format-discharging                      = <ramp-capacity><label-discharging>
+format-discharging-foreground           = #ffffff
+
+format-full-foreground                  = #ffffff
+
+
+
+full-at                                 = 99
+
+label-charging                          = 
+format-charging-padding                 = ${constants.padding}
+
+label-discharging                       = 
+format-discharging-padding              = ${constants.padding}
+
+label-full                              = 
+format-full-padding                     = ${constants.padding}
+
+poll-interval                           = 5
+
+type                                    = internal/battery
+
+ramp-capacity-0                         = 
+ramp-capacity-1                         = 
+ramp-capacity-2                         = 
+ramp-capacity-3                         = 
+ramp-capacity-4                         = 
+ramp-capacity-5                         = 
+ramp-capacity-6                         = 
+ramp-capacity-7                         = 
+ramp-capacity-8                         = 
+ramp-capacity-9                         = 
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <bar-volume>
+format-volume-prefix = "墳 "
+format-volume-prefix-foreground = ${colors.blue}
+label-muted = ﱝ   muted
+label-muted-foreground = #666
+
+bar-volume-width = 8
+bar-volume-foreground-0 = ${colors.pink}
+bar-volume-foreground-1 = ${colors.pink}
+bar-volume-foreground-2 = ${colors.pink}
+bar-volume-foreground-3 = ${colors.pink}
+bar-volume-foreground-4 = ${colors.pink}
+bar-volume-foreground-5 = ${colors.green}
+bar-volume-foreground-6 = ${colors.red}
+bar-volume-gradient = false
+bar-volume-indicator = 
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.red}
+
+
+
+[module/appsmenu]
+type = custom/text
+content-foreground = ${colors.blue}
+;content = " "
+content = " "
+click-left = exec rofi -show drun
+
+[module/player]
+type = custom/script
+exec = ~/.config/polybar/scripts/player.sh
+format = <label>
+tail = true
+interval = 1
+click-left = playerctl previous &
+click-right = playerctl next &
+click-middle = playerctl play-pause &
+
+[module/powermenu]
+type = custom/text
+content = ""
+content-foreground = ${colors.blue}
+click-left = exec clearine
+
+[module/cpu]
+type = internal/cpu
+
+; Seconds to sleep between updates
+interval = 1
+
+format = <label>
+format-prefix = %{T1}CPU%{T-}
+format-prefix-foreground = ${colors.blue}
+format-padding = 1
+format-background = ${color.background-alt}
+format-foreground = ${color.foreground}
+format-overline = ${color.background}
+format-underline = ${color.background}
+
+label = " %percentage%%"
+label-foreground = ${color.foreground}
+
+[module/filesystem]
+type = internal/fs
+
+; Mountpoints to display
+mount-0 = /
+
+; Seconds to sleep between updates
+interval = 30
+
+; Display fixed precision values
+fixed-values = true
+
+format-mounted = <label-mounted>
+format-mounted-prefix = %{T1}HDD%{T-}
+format-mounted-prefix-foreground = ${colors.blue}
+format-mounted-padding = 1
+format-mounted-background = ${color.background-alt}
+format-mounted-foreground = ${color.foreground}
+format-mounted-overline = ${color.background}
+format-mounted-underline = ${color.background}
+
+format-unmounted = <label-unmounted> 
+format-unmounted-padding = 1
+format-unmounted-prefix = %{T3}%{T-}
+format-unmounted-prefix-foreground = ${color.grey-1}
+format-unmounted-background = ${color.background-alt}
+format-unmounted-foreground = ${color.foreground}
+format-unmounted-overline = ${color.background}
+format-unmounted-underline = ${color.background}
+
+; %mountpoint%
+; %type%
+; %fsname%
+; %percentage_free%
+; %percentage_used%
+; %total%
+; %free%
+; %used%
+label-mounted = " %percentage_used%%"
+label-unmounted = " %mountpoint%: not mounted"
+
+[module/memory]
+type = internal/memory
+
+interval = 1
+
+format = <label>
+format-prefix = %{T1}MEM%{T-}
+format-prefix-foreground = ${colors.blue}
+format-padding = 1
+format-background = ${color.background-alt}
+format-foreground = ${color.foreground}
+format-overline = ${color.background}
+format-underline = ${color.background}
+
+; %percentage_used%
+; %percentage_free%
+; %gb_used%
+; %gb_free%
+; %gb_total%
+; %mb_used%
+; %mb_free%
+; %mb_total%
+; %percentage_swap_used%
+; %percentage_swap_free%
+; %mb_swap_total%
+; %mb_swap_free%
+; %mb_swap_used%
+; %gb_swap_total%
+; %gb_swap_free%
+; %gb_swap_used%
+label = " %percentage_used%%"
+label-foreground = ${color.foreground}
+
+[module/firefox]
+type = custom/text
+content = ""
+content-padding = 1
+content-foreground = ${colors.pink}
+click-left = exec firefox
+
+[module/steam]
+type = custom/text
+content = ""
+content-padding = 1
+content-foreground = ${colors.pink}
+click-left = exec steam
+
+[module/spotify]
+type = custom/text
+content = ""
+content-padding = 1
+content-foreground = ${colors.pink}
+click-left = exec spotify
+
+[module/email]
+type = custom/text
+content = ""
+content-padding = 1
+content-foreground = ${colors.pink}
+click-left = exec thunderbird
+
+[module/files]
+type = custom/text
+content = ""
+content-padding = 1
+content-foreground = ${colors.pink}
+click-left = exec thunar
+
+[module/separator]
+type = custom/text
+content = "%{T3} %{T-}"
+content-foreground = ${colors.foreground}
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
