@@ -22,8 +22,6 @@ alias neo='neofetch --w3m ~/.config/term.png --xoffset 10 --yoffset 10 --size 20
 alias trim='sudo fstrim / -v'
 alias kube='ckube -H 4.0 -m 0,1'
 alias orphans='sudo pacman -Rns $(pacman -Qtdq)'
-alias gtktheme='~/Colorizer-0.5-beta.1/./colorizer.sh --wal --gtk fantome --xfwm wendows'
-alias etherium='lolminer --algo ETCHASH --pool eu1-etc.ethermine.org:4444 --user 0xb62c7057C7a6D6475293aC3c784221E39d7B304E'
 
 
 LANG="sv_SE.utf8"
