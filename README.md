@@ -29,6 +29,6 @@ Optional
 
 Other
 
-- [Video](https://www.youtube.com/watch?v=gLNma-6AHPM) (Dotfiles in action Old somewhat relevant still)
+- [Video](https://www.youtube.com/watch?v=tVu0QezFRUs) (Short video of dotfiles)
 
 All applications used in this config should be available in most major distros standard repos.
