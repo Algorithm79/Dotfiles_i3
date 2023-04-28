@@ -12,7 +12,6 @@
 
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias clock='tty-clock -c -B -D'
 alias youtube='mpsyt'
@@ -23,10 +22,6 @@ alias trim='sudo fstrim / -v'
 alias kube='ckube -H 4.0 -m 0,1'
 alias orphans='sudo pacman -Rns $(pacman -Qtdq)'
 
-
-LANG="sv_SE.utf8"
-export LANG
-
 PS1="\n\[\e[0;34m\]┌─[\[\e[1;36m\u\e[0;34m\]]──[\e[1;37m\w\e[0;34m]──[\[\e[1;36m\]${HOSTNAME%%.*}\[\e[0;34m\]]\[\e[1;35m\]: \$\[\e[0;34m\]\n\[\e[0;34m\]└────╼ \[\e[1;35m\]>> \[\e[00;00m\]"
 
 
@@ -36,12 +31,6 @@ trap 'echo -ne "\e[0m"' DEBUG
 [ -e "$HOME/.dircolors" ] && DIR_COLORS="$HOME/.dircolors"
 [ -e "$DIR_COLORS" ] || DIR_COLORS=""
 eval "`dircolors -b $DIR_COLORS`"
-
-#export PYTHONPATH=/usr/lib/python3.8/site-packages
-#powerline-daemon -q
-#POWERLINE_BASH_CONTINUATION=1
-#POWERLINE_BASH_SELECT=1
-#. /usr/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
 
 extract () {
 if [ -f $1 ] ; then
@@ -63,24 +52,6 @@ if [ -f $1 ] ; then
      echo "'$1' is not a valid file"
  fi
 }
-
-#[ -n "$XTERM_VERSION" ] && transset-df 0.90 --id "$WINDOWID" >/dev/null
-
-source "${HOME}/.cache/wal/colors.sh"
-
-# Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
-
-# Alternative (blocks terminal for 0-3ms)
-cat ~/.cache/wal/sequences
-
-# To add support for TTYs this line can be optionally added.
-source ~/.cache/wal/colors-tty.sh
-
-
-pfetch
 
 export PATH="$HOME/.scripts:$PATH"
 export PATH="/home/magnus/.local/bin:$PATH"
