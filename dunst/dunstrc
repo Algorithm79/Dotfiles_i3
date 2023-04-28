@@ -23,7 +23,7 @@
     # "keyboard" needs a window manager that exports the
     # _NET_ACTIVE_WINDOW property.
     # This should be the case for almost all modern window managers.
-    #
+   
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
     follow = mouse
@@ -52,7 +52,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.).
-#    transparency = 100
+    transparency = 25
 
     # The height of the entire notification.  If the height is smaller
     # than the font height and padding combined, it will be raised
@@ -62,7 +62,7 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 2
+    separator_height = 0
 
     # Padding between text and separator.
     padding = 8
@@ -72,10 +72,10 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 3
+    frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "1E1E2E"
+    frame_color = "F5C2E7"
 
     # Define a color for the separator.
     # possible values are:
@@ -305,7 +305,7 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#1E1E2E"
     foreground = "#62d6e8"
-    frame_color = "#1E1E2E"
+    frame_color = "#F5C2E7"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
@@ -313,7 +313,7 @@
 [urgency_normal]
     background = "#1E1E2E"
     foreground = "#62d6e8"
-    frame_color = "#1E1E2E"
+    frame_color = "#F5C2E7"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
@@ -321,7 +321,7 @@
 [urgency_critical]
     background = "#1E1E2E"
     foreground = "#62d6e8"
-    frame_color = "#1E1E2E"
+    frame_color = "#F5C2E7"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
