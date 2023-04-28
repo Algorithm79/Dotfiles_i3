@@ -209,9 +209,10 @@ alias orphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias trim='sudo fstrim / -v'
 alias kube='ckube -H 4.0 -m 0,1'
 alias clock='tty-clock -c -B -D'
-alias youtube='mpsyt'
+alias youtube='yt'
 alias musik='ncmpcpp'
 alias tui='s-tui'
+alias vim='nvim'
 
 ### Bind keys
 #############
@@ -309,4 +310,3 @@ zstyle '*' single-ignored show
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(starship init zsh)"
-pfetch
