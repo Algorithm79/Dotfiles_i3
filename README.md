@@ -12,11 +12,10 @@
 - [Autotiling](https://github.com/nwg-piotr/autotiling) (Autotiler for i3)
 - [Kitty](https://github.com/kovidgoyal/kitty) (Terminal)
 - [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) (FontAwesome Icons in Polybar) + (Hack Nerd Font)
-- [Clearine](https://github.com/okitavera/clearine) (X11 Logout UI)
 - [Betterlockscreen](https://github.com/betterlockscreen/betterlockscreen) (Lockscreen)
 - [Rofi](https://github.com/davatorium/rofi) (window switcher, launcher etc use rofi-git)
 - [Dunst](https://github.com/dunst-project/dunst) (notification daemon)
-- [Qogir-icons](https://github.com/vinceliuice/Qogir-icon-theme) (Icon theme used in Rofi)
+- [Papirus Icon Theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) (Icon theme used in Rofi)
 - [Catppuccin Theme](https://github.com/catppuccin/catppuccin) (Colour Theme used everywhere)
 - [Picom](https://github.com/yshui/picom) (Compositor) 
 - [Feh](https://github.com/derf/feh) (Needed to use script to set wallpaper from Ranger)
@@ -25,7 +24,7 @@
 
 Optional
 
-- [vim-airline](https://github.com/vim-airline/vim-airline) (status/tabline for vim)
+- [NvVhad](https://github.com/NvChad/NvChad) (neovim config)
 
 
 Other
