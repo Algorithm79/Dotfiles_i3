@@ -37,10 +37,13 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+z exec rofi -show drun
+bindsym $mod+z exec --no-startup-id ~/.config/rofi/launchers/type-3/launcher.sh
 
 # start rofi (window mode)
-bindsym $mod+Tab exec rofi -show window
+bindsym $mod+Tab exec --no-startup-id ~/.config/rofi/launchers/type-3/windows.sh
+
+# start rofi (filebrowser)
+bindsym $mod+s exec --no-startup-id ~/.config/rofi/launchers/type-3/filebrowser.sh
 
 # open empty container
 bindsym $mod+Shift+Return exec i3-msg open
@@ -79,11 +82,6 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 # global fullscreen: across all monitors
 bindsym $mod+shift+f        fullscreen toggle global
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -133,28 +131,28 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # open applications on specific workspaces
-assign [class="Chromium"] $workspace1
-assign [class="firefox"] $workspace1
-assign [class="Google-chrome"] $workspace1
-assign [class="Firefox"] $workspace1
+#assign [class="Chromium"] $workspace1
+#assign [class="firefox"] $workspace1
+#assign [class="Google-chrome"] $workspace1
+#assign [class="Firefox"] $workspace1
 #assign [class="qutebrowser"] $workspace1
-assign [class="Nautilus"] $workspace3
-assign [class="Pcmanfm"] $workspace3
-assign [class="Thunar"] $workspace3
-assign [class="Thunderbird"] $workspace7
-assign [class="Spotify"] $workspace10
-for_window [class="Spotify"] move to workspace $workspace10 
-assign [class="Rhythmbox"] $workspace4
-assign [class="Audacious"] $workspace4
-assign [class="Gnome-mplayer"] $workspace5
-assign [class="Vlc"] $workspace5
-assign [class="Totem"] $workspace5
+#assign [class="Nautilus"] $workspace3
+#assign [class="Pcmanfm"] $workspace3
+#assign [class="Thunar"] $workspace3
+#assign [class="Thunderbird"] $workspace7
+#assign [class="Spotify"] $workspace10
+#for_window [class="Spotify"] move to workspace $workspace10 
+#assign [class="Rhythmbox"] $workspace4
+#assign [class="Audacious"] $workspace4
+#assign [class="Gnome-mplayer"] $workspace5
+#assign [class="Vlc"] $workspace5
+#assign [class="Totem"] $workspace5
 #assign [class="MPlayer"] $workspace5
 #assign [class="mpv"] $workspace5
-assign [class="Steam"] $workspace6
-assign [class="Gimp"] $workspace8
-assign [class="Photoshop.exe"] $workspace8
-assign [class="Gthumb"] $workspace8
+#assign [class="Steam"] $workspace6
+#assign [class="Gimp"] $workspace8
+#assign [class="Photoshop.exe"] $workspace8
+#assign [class="Gthumb"] $workspace8
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -194,26 +192,22 @@ bindsym $mod+r mode "resize"
 
 # Colors
 
-client.focused_inactive  #ffffff #ffffff #000000 #ffffff 
-client.unfocused         #ffffff #ffffff #000000 #ffffff 
-client.urgent            #ffffff #ffffff #000000 #ffffff
-client.placeholder       #ffffff #ffffff #000000 #ffffff
-
 # Set colors from Xresources
 # Change 'color7' and 'color2' to whatever colors you want i3 to use 
 # from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
-#set_from_resource $fg i3wm.color7 #f0f0f0
-#set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #F5C2E7
 
 # class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
 
-#client.unfocused        $bg     $bg     $fg  $bg       $bg
-#client.urgent           $bg     $bg     $fg  $bg       $bg
-#client.placeholder      $bg     $bg     $fg  $bg       $bg
-
-#client.background       $bg
+client.background       $bg
 
 # windows starting in floating mode
 for_window [instance="origin.exe"] floating enable
@@ -247,7 +241,7 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="FS-UAE Launcher 2.8.3 (Not logged in)"] floating enable
 for_window [class="Nm-connection-editor"] floating enable 
 for_window [class="MPlayer"] floating enable
-for_window [class="mpv"] floating enable
+#for_window [class="mpv"] floating enable
 for_window [class="Blueman-manager"] floating enable 
 for_window [title="dosbox"] floating enable
 for_window [title="Type Knight"] floating enable
@@ -255,7 +249,7 @@ for_window [class="Nvidia-settings"] floating enable
 for_window [class="Solaar"] floating enable
 for_window [class="Gnome-multi-writer"] floating enable
 for_window [class="multibootusb"] floating enable
-for_window [class="Org.gnome.Weather"] floating enable
+for_window [class="org.gnome.Weather"] floating enable
 for_window [class="Gnome-calendar"] floating enable 
 for_window [class="gnome-calculator"] floating enable
 for_window [class="feh"] floating enable
@@ -263,25 +257,22 @@ for_window [class="feh"] floating enable
 #for_window [class="qutebrowser"] floating enable
 #for_window [class="cool-retro-term"] resize set 600 740
 
-# volume control
-bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ && $HOME/.config/dunst/volume.sh up
-bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- && $HOME/.config/dunst/volume.sh down
-
-# granular volume control
-bindsym $mod+XF86AudioRaiseVolume exec amixer -D pulse sset Master 1%+ && $HOME/.config/dunst/volume.sh up 
-bindsym $mod+XF86AudioLowerVolume exec amixer -D pulse sset Master 1%- && $HOME/.config/dunst/volume.sh down
-
-# mute
-bindsym XF86AudioMute exec amixer sset Master toggle 
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # media player controls
 bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioPause exec mpc pause
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
+bindsym $mod+m exec --no-startup-id ~/.config/rofi/applets/bin/mpd.sh
 
 # screenshot
-bindsym Print exec scrot $HOME/Bilder/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png && notify-send "Screenshot" "Screenshot Captured"
+bindsym Print exec --no-startup-id ~/.config/rofi/applets/bin/screenshot.sh
 
 # window style
 new_window pixel 1
@@ -289,22 +280,25 @@ new_float normal 1
 hide_edge_borders none
 
 # i3 gaps
-for_window [class="^.*"] border pixel 0
+default_floating_border pixel 2
+# default_border pixel 0
+for_window [class=".*"] border pixel 2
+for_window [class="^.*"] border pixel 2
 gaps inner 10
 gaps outer 6
 
 # shut down, restart and locking features
-bindsym $mod+Delete exec clearine
+bindsym $mod+Delete exec --no-startup-id ~/.config/rofi/powermenu/type-2/powermenu.sh
 
 # autostarted applications
-exec --no-startup-id autotiling
+exec_always --no-startup-id autotiling
 #exec_always --no-startup-id wal -R -n
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id ~/.fehbg
-exec_always --no-startup-id picom --experimental-backends
+exec_always --no-startup-id picom
 exec --no-startup-id xset dpms 500
 exec --no-startup-id dunst
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/lib/polkit-1/polkit-agent-helper-1
 exec --no-startup-id mpd
 exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id setxkbmap se
